@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">The islands around Mushroom Bay</title>
+  <desc id="desc">Illustrative local nautical chart centred on Gypsy Laut at Mushroom Bay, Nusa Lembongan. Subtle outline symbols identify surf, reef, manta and fishing possibilities around Lembongan, Ceningan and Penida. A small locator gives Bali, Lombok and the Gilis as regional context. Not for navigation or activity planning.</desc>
+  <defs>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#8aaeb2" stroke-opacity=".13" stroke-width="1"/></pattern>
+    <!-- Adapted directly from the approved experience-card outline family. -->
+    <g id="chart-anchor" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="5" r="2"/><path d="M16 7v20M10 12h12M5 19c0 5 4.5 9 11 9s11-4 11-9M5 19l3 2M27 19l-3 2"/></g>
+    <g id="chart-surf" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3c-4.5 4-7 9-7 14s2.5 9 7 12c4.5-3 7-7 7-12S20.5 7 16 3zM16 4v23"/></g>
+    <g id="chart-manta" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10c-2-2-4-2-7 0l-6 3c2 4 5 7 10 8l3-2 3 2c5-1 8-4 10-8l-6-3c-3-2-5-2-7 0zM16 19v9"/></g>
+    <g id="chart-mask" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12c4-3 18-3 22 0l-2 9c-3 2-6 2-9-1-3 3-6 3-9 1zM27 14h3V7"/></g>
+    <g id="chart-hook" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="5" r="2"/><path d="M13 7v14a7 7 0 0 0 14 0v-5M24 18l3-2 2 3"/></g>
+  </defs>
+  <rect width="1200" height="680" fill="#0c3046"/>
+  <rect width="1200" height="680" fill="url(#grid)"/>
+
+  <!-- The earlier local chart's open water, contours and island scale remain the composition. -->
+  <g fill="none" stroke="#8aaeb2" stroke-width="1" stroke-opacity=".26">
+    <path d="M155 130C209 85 338 63 457 104c81 28 116 97 100 173-8 37-2 62 28 86"/>
+    <path d="M119 115C194 39 371 26 492 76c101 42 151 132 120 226-8 28 2 54 31 78"/>
+    <path d="M551 306c131-85 392-103 569-31 75 31 113 88 118 139"/>
+    <path d="M527 284c143-112 413-127 614-46 88 36 132 101 139 166"/>
+    <path d="M548 617c136 58 393 62 583-11 50-19 89-49 119-91"/>
+  </g>
+  <g fill="#ece4d5" stroke="#d8c6a8" stroke-width="1.5" stroke-linejoin="round">
+    <!-- Only the southeastern edge of Bali is shown; the Nusa islands retain the lead. -->
+    <path d="M0 0h148c-8 29-30 44-49 53-13 7-15 24-28 31-12 7-29 4-38 16-10 14-17 27-33 31z"/>
+    <path d="M361 130c34 1 69 17 89 45l10 33-13 26 5 36-19 29 7 31-30 33-37 9-16-16-38 5-25-14-26 9-17-23 9-21-15-25 10-35-8-26 26-38 22-9 12-28 39-12z"/>
+    <path d="M474 370l31 7 25 19 10 25-17 18-1 28-25 15-31-9-22-28-7-26 16-26z"/>
+    <path d="M631 371l42-30 75-17 70 4 57-11 71 8 56-12 63 16 55 32 30 39-2 51-28 45-38 21-42 43-70 20-74 4-52 22-80-4-41-19-67-3-46-28-37-13-18-35 6-29-16-22 8-29-14-20z"/>
+  </g>
+  <!-- Routes sit above land in the SVG order, but trace open water only. -->
+  <g fill="none" stroke="#d8c6a8" stroke-width="1.1" stroke-opacity=".39" stroke-dasharray="3 8">
+    <path d="M276 375Q284 400 297 419"/>
+    <path d="M276 375Q321 401 390 419"/>
+  </g>
+
+  <!-- A tiny locator, deliberately subordinate to the local chart. -->
+  <g transform="translate(803 45)" font-family="DM Sans, Segoe UI, sans-serif">
+    <rect x="0" y="0" width="275" height="131" fill="#0c3046" stroke="#8aaeb2" stroke-opacity=".38" stroke-width="1"/>
+    <text x="15" y="20" fill="#bdc8c5" font-size="9" letter-spacing="2">REGIONAL LOCATOR</text>
+    <path d="M17 43c23-7 40 6 50 12 5 4 12 10 22 10" fill="none" stroke="#d8c6a8" stroke-opacity=".8" stroke-width="2"/>
+    <path d="M111 65l8-4 7 3 4 7-5 5-9-1-5-5zM134 72l6-2 5 4-3 5-6-1zM148 77l9-3 11 4 8 7-9 5-14-3z" fill="#ece4d5" stroke="#d8c6a8" stroke-width=".8"/>
+    <path d="M209 46c17-8 36-5 50 4v32c-15 2-29 2-43-2-11-4-18-19-7-34z" fill="#ece4d5" stroke="#d8c6a8" stroke-width=".8"/>
+    <circle cx="204" cy="29" r="1.7" fill="#d8c6a8"/><circle cx="209" cy="25" r="1.7" fill="#d8c6a8"/><circle cx="214" cy="22" r="1.7" fill="#d8c6a8"/>
+    <path d="M78 67Q130 41 198 53" fill="none" stroke="#d8c6a8" stroke-opacity=".35" stroke-width=".9" stroke-dasharray="2 5"/>
+    <g fill="#d7d5cc" font-size="10" letter-spacing=".2">
+      <text x="21" y="104">Bali</text><text x="101" y="108">Nusa Islands</text><text x="209" y="106">Lombok</text><text x="189" y="18">Gilis</text>
+    </g>
+  </g>
+
+  <!-- Annotation order: leader lines, markers/icons, then all main-chart text. -->
+  <g id="chart-leaders" fill="none" stroke="#9dbbb8" stroke-width="1.15" stroke-opacity=".84" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M341 104l-4 9"/><path d="M491 157l-19 12"/>
+    <path d="M185 150l61 40"/><path d="M185 177l45 39"/>
+    <path d="M185 204l47 56"/><path d="M185 231l45 71"/>
+    <path d="M185 258l42 68"/><path d="M405 452l19 0"/>
+    <path d="M506 500l-5-16-8-12"/>
+    <path d="M605 307l13 36"/><path d="M712 281l-12 27"/>
+    <path d="M828 285l-14 17"/><path d="M955 291l-14 8"/>
+    <path d="M651 505L590 512 530 515"/>
+    <path d="M514 543h51l44 8"/><path d="M523 575h68l49-9"/>
+    <path d="M715 627l49-28"/>
+    <path d="M649 422L589 442 540 470"/>
+    <path d="M886 643l-34 5-17-21"/>
+  </g>
+
+  <g id="chart-endpoints" fill="#e8dfcf" stroke="#0c3046" stroke-width="1.1">
+    <circle cx="337" cy="113" r="2.8"/><circle cx="472" cy="169" r="2.8"/>
+    <circle cx="246" cy="190" r="2.8"/><circle cx="230" cy="216" r="2.8"/>
+    <circle cx="232" cy="260" r="2.8"/><circle cx="230" cy="302" r="2.8"/>
+    <circle cx="227" cy="326" r="2.8"/><circle cx="424" cy="452" r="2.8"/>
+    <circle cx="493" cy="472" r="2.8"/>
+    <circle cx="618" cy="343" r="2.8"/><circle cx="700" cy="308" r="2.8"/>
+    <circle cx="814" cy="302" r="2.8"/><circle cx="941" cy="299" r="2.8"/>
+    <circle cx="530" cy="515" r="2.8"/><circle cx="609" cy="551" r="2.8"/>
+    <circle cx="640" cy="566" r="2.8"/><circle cx="764" cy="599" r="2.8"/>
+    <circle cx="540" cy="470" r="2.8"/><circle cx="835" cy="627" r="2.8"/>
+  </g>
+  <g color="#d9ddda" opacity=".84">
+    <use href="#chart-surf" transform="translate(73 138) scale(.52)"/>
+    <use href="#chart-surf" transform="translate(73 165) scale(.52)"/>
+    <use href="#chart-surf" transform="translate(73 192) scale(.52)"/>
+    <use href="#chart-surf" transform="translate(73 219) scale(.52)"/>
+    <use href="#chart-surf" transform="translate(73 246) scale(.52)"/>
+    <use href="#chart-surf" transform="translate(283 443) scale(.52)"/>
+  </g>
+  <g color="#e8dfcf" opacity=".9">
+    <use href="#chart-mask" transform="translate(504 138) scale(.56)"/>
+    <use href="#chart-mask" transform="translate(525 277) scale(.56)"/>
+    <use href="#chart-mask" transform="translate(650 257) scale(.56)"/>
+    <use href="#chart-manta" transform="translate(860 624) scale(.56)"/>
+  </g>
+  <g color="#173249" opacity=".86">
+    <use href="#chart-mask" transform="translate(628 404) scale(.56)"/>
+    <use href="#chart-manta" transform="translate(628 486) scale(.56)"/>
+  </g>
+  <!-- Broad water cues, not fishing pins: keep clear of the Batu Abah eastern core area. -->
+  <g color="#c5d1cc" opacity=".66">
+    <use href="#chart-hook" transform="translate(719 201) scale(.51)"/>
+    <use href="#chart-hook" transform="translate(531 610) scale(.51)"/>
+    <use href="#chart-hook" transform="translate(985 608) scale(.51)"/>
+  </g>
+  <g fill="none" stroke="#f3eadd" stroke-width="1.1">
+    <circle cx="276" cy="375" r="15" stroke-opacity=".65"/>
+  </g>
+  <g color="#f3eadd"><use href="#chart-anchor" transform="translate(267 366) scale(.56)"/></g>
+  <g transform="translate(1130 93)" fill="none" stroke="#d8c6a8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <circle r="24" stroke-opacity=".6"/><path d="M0 13V-13m0 0-4 6m4-6 4 6"/>
+  </g>
+
+  <g id="chart-labels" font-family="DM Sans, Segoe UI, sans-serif">
+    <g letter-spacing="1.5" fill="#173249" text-anchor="middle">
+      <text x="353" y="223" font-size="15">NUSA</text>
+      <text x="353" y="245" font-size="17">LEMBONGAN</text>
+      <text x="848" y="459" font-size="20" letter-spacing="2">NUSA PENIDA</text>
+    </g>
+    <text x="364" y="515" font-size="15" letter-spacing="1" fill="#d4d8d0">NUSA CENINGAN</text>
+    <text x="27" y="69" font-size="12" letter-spacing="2" fill="#173249">BALI</text>
+    <g fill="#e8dfcf" font-size="12.5" letter-spacing=".3">
+      <text x="99" y="153">Shipwrecks</text><text x="99" y="180">Razors</text>
+      <text x="99" y="207">Lacerations</text><text x="99" y="234">Playgrounds</text>
+      <text x="99" y="261">Tamarind</text>
+      <text x="309" y="457">Ceningan /</text><text x="309" y="473">Mahana Point</text>
+    </g>
+    <g fill="#e8dfcf" font-size="13" letter-spacing=".35">
+      <text x="531" y="154">Mangrove Point</text><text x="552" y="293">Gamat Bay</text>
+      <text x="678" y="273">Toyapakeh</text><text x="888" y="645">Manta Point</text>
+    </g>
+    <g fill="#b7c5c4" font-size="11.5" letter-spacing=".35">
+      <text x="356" y="99">Blue Corner · dive</text><text x="831" y="281">Ped · dive</text>
+      <text x="938" y="285">SD Point · dive</text>
+      <text x="744" y="218">Fishing waters</text>
+      <text x="557" y="635">Fishing waters</text>
+      <text x="1009" y="630">Sport fishing waters</text>
+    </g>
+    <g fill="#c2ceca" font-size="11.5" letter-spacing=".3">
+      <text x="478" y="253">Mangroves</text><text x="99" y="434">Devil’s Tear</text>
+      <text x="412" y="547">Broken Beach</text><text x="393" y="579">Angel’s Billabong</text>
+      <text x="715" y="642">Kelingking</text>
+    </g>
+    <g fill="#173249" letter-spacing=".35">
+      <text x="650" y="420" font-size="13">Crystal Bay</text>
+      <text x="655" y="503" font-size="13">Manta Bay</text>
+      <text x="297" y="288" font-size="11.5">Jungut Batu</text>
+    </g>
+    <text x="91" y="373" font-size="11" letter-spacing="2.2" fill="#f3eadd">GYPSY LAUT</text>
+    <text x="91" y="396" font-size="19" letter-spacing=".3" fill="#f3eadd">Mushroom Bay</text>
+    <text x="31" y="642" font-size="10" letter-spacing="1.5" fill="#a9c0c0">8° S / 115° E · ILLUSTRATIVE</text>
+    <text x="1130" y="60" fill="#d8c6a8" text-anchor="middle" font-size="13" letter-spacing="2">N</text>
+  </g>
+</svg>

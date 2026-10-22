@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gypsy Laut homepage preview: a private base on the Indonesian sea.">
+  <title>Gypsy Laut — Milestone 9 preview (v0.11.0)</title>
+  <!-- Editable review copy of the theme through Enquiry. All styling and
+       interaction code is included here; source media stays in gypsy-laut/assets/. -->
+  <style>
+/*
+Theme Name: Gypsy Laut 2.0
+Theme URI: https://gypsylaut.com
+Author: Gypsy Laut
+Description: A lightweight, editable block theme for the Gypsy Laut homepage milestones.
+Version: 0.11.0
+Text Domain: gypsy-laut
+*/
+
+/* Milestones 1–3 are approved and locked; retain this foundation for future milestones. */
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("gypsy-laut/assets/fonts/CormorantGaramond-variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("gypsy-laut/assets/fonts/CormorantGaramond-Italic-variable.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("gypsy-laut/assets/fonts/DMSans-variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+}
+
+:root {
+  --gypsy-navy: #09284a;
+  --gypsy-ocean: #0c3046;
+  --gypsy-ink: #102033;
+  --gypsy-cream: #f5f0e7;
+  --gypsy-sand: #d8c6a8;
+  --gypsy-aqua: #8aaeb2;
+  --gypsy-timber: #6b4530;
+  --gypsy-rule: rgba(9, 40, 74, .18);
+  --gypsy-boat-photo: url("gypsy-laut/assets/images/gypsy-laut-bow-hero-sunset.png");
+  --gypsy-display: "Cormorant Garamond", Georgia, serif;
+  --gypsy-sans: "DM Sans", "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--gypsy-ink); background: var(--gypsy-cream); font-family: var(--gypsy-sans); font-size: 16px; line-height: 1.6; }
+a { color: inherit; }
+button { font: inherit; }
+.screen-reader-text { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+.gypsy-header { position: absolute; z-index: 10; inset: 0 0 auto; padding: 1.25rem clamp(1.25rem, 5vw, 5rem); color: #fff; }
+.gypsy-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; max-width: 1440px; margin: auto; }
+.gypsy-logo { display: inline-flex; width: 118px; flex: 0 0 auto; align-items: center; transition: opacity .2s ease; }
+.gypsy-logo img { display: block; width: 100%; height: auto; }
+.gypsy-logo:hover { opacity: .88; }
+.gypsy-logo:active { opacity: .75; }
+.gypsy-logo:focus-visible { outline: 1px solid rgba(255,255,255,.78); outline-offset: 4px; }
+.gypsy-nav { display: flex; align-items: center; gap: clamp(1rem, 2vw, 2.25rem); font-size: .75rem; letter-spacing: .11em; text-transform: uppercase; }
+.gypsy-nav a { padding: .5rem 0; color: rgba(255,255,255,.88); text-decoration-line: underline; text-decoration-color: transparent; text-decoration-thickness: 1px; text-underline-offset: .55em; white-space: nowrap; transition: color .2s ease, text-decoration-color .2s ease, background-color .2s ease; }
+.gypsy-nav a:hover, .gypsy-nav a:focus-visible, .gypsy-nav a[aria-current="location"] { color: #fff; text-decoration-color: rgba(255,255,255,.95); }
+.gypsy-nav a:active { background: rgba(255,255,255,.09); }
+.gypsy-nav a:focus-visible { outline: 1px solid rgba(255,255,255,.78); outline-offset: 4px; }
+.gypsy-nav .gypsy-enquire { border: 1px solid rgba(255,255,255,.7); padding: .65rem .9rem; text-decoration-line: none; }
+.gypsy-nav .gypsy-enquire:hover, .gypsy-nav .gypsy-enquire:focus-visible, .gypsy-nav .gypsy-enquire[aria-current="location"] { border-color: #fff; background: rgba(255,255,255,.09); }
+.gypsy-nav .gypsy-enquire:active { background: rgba(255,255,255,.17); }
+.gypsy-menu-button { display: none; min-width: 48px; min-height: 48px; padding: .5rem; border: 1px solid rgba(255,255,255,.7); background: transparent; color: #fff; font-size: .75rem; letter-spacing: .11em; text-transform: uppercase; cursor: pointer; }
+.gypsy-menu-button:hover, .gypsy-menu-button:focus-visible { background: rgba(255,255,255,.09); }
+.gypsy-menu-button:active { background: rgba(255,255,255,.17); }
+.gypsy-menu-button:focus-visible { outline: 1px solid #fff; outline-offset: 4px; }
+
+.gypsy-hero { position: relative; isolation: isolate; display: grid; align-items: end; min-height: 100svh; overflow: hidden; color: #fff; background: var(--gypsy-cream); }
+.gypsy-hero__media, .gypsy-hero__media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.gypsy-hero__media {
+  z-index: -1;
+  background: var(--gypsy-navy) var(--gypsy-boat-photo) center / cover no-repeat;
+}
+.gypsy-hero__media::after { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, rgba(4,22,39,.68), rgba(4,22,39,.34) 43%, rgba(4,22,39,.05) 76%), linear-gradient(0deg, rgba(4,22,39,.42), transparent 45%); }
+.gypsy-hero__content { position: relative; z-index: 1; width: min(900px, 100%); padding: clamp(8rem, 16vh, 12rem) clamp(1.25rem, 9vw, 10rem) max(clamp(7rem, 12vh, 9rem), calc(6svh + 3.75rem)); }
+.gypsy-hero h1, .gypsy-concept h2 { margin: 0; font-family: var(--gypsy-display); font-weight: 400; line-height: .92; letter-spacing: -.034em; }
+.gypsy-hero h1 { max-width: 10ch; font-size: clamp(4rem, 7.3vw, 7.8rem); text-wrap: balance; }
+.gypsy-hero__description { max-width: 33rem; margin: 1.5rem 0 0; font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.5; }
+.gypsy-actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 2.25rem; }
+.gypsy-button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .82rem 1.1rem; border: 1px solid currentColor; color: #fff; background: transparent; font-size: .75rem; font-weight: 600; letter-spacing: .11em; text-decoration: none; text-transform: uppercase; transition: background-color .22s ease, color .22s ease; }
+.gypsy-button:hover, .gypsy-button:focus-visible { color: var(--gypsy-navy); background: #fff; }
+.gypsy-button--solid { color: var(--gypsy-navy); background: #fff; }
+.gypsy-button--solid:hover, .gypsy-button--solid:focus-visible { color: #fff; background: var(--gypsy-navy); }
+.gypsy-hero__edge { position: absolute; z-index: 1; right: clamp(1.25rem, 5vw, 5rem); bottom: calc(6% + 1.5rem); left: clamp(1.25rem, 5vw, 5rem); display: flex; justify-content: space-between; align-items: center; gap: 2rem; color: #fff; font-size: .75rem; letter-spacing: .17em; line-height: 1.4; text-shadow: 0 1px 10px rgba(4,22,39,.45); text-transform: uppercase; }
+.gypsy-location { display: inline-flex; align-items: center; gap: .9rem; margin: 0; }
+.gypsy-location::before { display: block; width: 2.5rem; height: 1px; background: currentColor; content: ""; }
+.gypsy-scroll-hint { white-space: nowrap; }
+
+.gypsy-concept { position: relative; overflow: hidden; padding: clamp(5.5rem, 13vw, 11rem) clamp(1.25rem, 9vw, 10rem); background: var(--gypsy-cream); }
+.gypsy-concept::before { position: absolute; z-index: 0; top: 6%; right: -9%; width: min(54vw, 760px); aspect-ratio: 1.25; background: var(--gypsy-boat-photo) center / cover no-repeat; opacity: .13; mix-blend-mode: multiply; mask-image: linear-gradient(90deg, transparent, black 35%, black 70%, transparent); content: ""; }
+.gypsy-concept__grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(2rem, 10vw, 11rem); max-width: 1280px; margin: auto; }
+.gypsy-concept__label { display: flex; gap: 1rem; margin: 0 0 1.5rem; font-size: .75rem; letter-spacing: .17em; text-transform: uppercase; }
+.gypsy-concept__label::before { width: 2.75rem; height: 1px; margin-top: .7em; background: var(--gypsy-navy); content: ""; }
+.gypsy-concept h2 { max-width: 10ch; color: var(--gypsy-navy); font-size: clamp(3.3rem, 6vw, 6.4rem); }
+.gypsy-concept__copy { max-width: 34rem; padding-top: .45rem; }
+.gypsy-concept__copy p { margin: 0 0 1.25rem; font-size: clamp(1rem, 1.45vw, 1.22rem); }
+.gypsy-concept__supporting { max-width: 25rem; margin-top: 2.3rem !important; padding-top: 1.25rem; border-top: 1px solid var(--gypsy-rule); color: var(--gypsy-navy); font-family: var(--gypsy-display); font-size: 1.65rem !important; font-style: italic; line-height: 1.2; }
+
+@media (max-width: 840px) {
+  .gypsy-logo { width: 104px; }
+  .gypsy-menu-button { display: block; }
+  .gypsy-nav { display: none; position: absolute; top: 100%; right: 1.25rem; left: 1.25rem; padding: 1.25rem; background: var(--gypsy-navy); flex-direction: column; align-items: stretch; gap: .4rem; }
+  .gypsy-nav.is-open { display: flex; }
+  .gypsy-hero__content { padding-top: 9rem; }
+  .gypsy-scroll-hint { display: none; }
+  .gypsy-concept__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .gypsy-concept::before { top: 4%; right: -36%; width: 105vw; opacity: .1; }
+}
+@media (max-width: 480px) {
+  .gypsy-hero h1 { font-size: clamp(3.7rem, 15vw, 4.6rem); }
+  .gypsy-hero__edge { font-size: .7rem; letter-spacing: .1em; }
+  .gypsy-location::before { width: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .gypsy-hero__media video { display: none; }
+  .gypsy-button, .gypsy-nav a, .gypsy-logo { transition: none; }
+}
+
+/* Milestone 2: image-led experiences and the stay-aboard story. */
+.gypsy-experiences { padding: clamp(5.5rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem) clamp(5rem, 9vw, 8rem); color: #fff; background: var(--gypsy-ocean) url("gypsy-laut/assets/images/ocean-chart-texture.svg") center top / 100% 100% no-repeat; }
+.gypsy-experiences__inner, .gypsy-stay__inner { max-width: 1440px; margin: 0 auto; }
+.gypsy-experiences__intro { padding-bottom: clamp(3.5rem, 7vw, 6rem); }
+.gypsy-experiences h2, .gypsy-stay h2 { margin: 0; font-family: var(--gypsy-display); font-weight: 400; letter-spacing: -.034em; line-height: .94; text-wrap: balance; }
+.gypsy-experiences h2 { max-width: 11ch; font-size: clamp(3.8rem, 7vw, 7.5rem); }
+.gypsy-experiences__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.25rem, 2.5vw, 2.5rem); }
+.gypsy-experience { position: relative; isolation: isolate; display: block; min-height: clamp(25rem, 35vw, 34rem); overflow: hidden; color: #fff; background: var(--gypsy-ocean); text-decoration: none; }
+.gypsy-experience img { position: absolute; z-index: -2; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .65s cubic-bezier(.2,.7,.2,1); }
+.gypsy-experiences__grid > .gypsy-experience:nth-child(4) img { object-position: 40% center; }
+.gypsy-experience::before { position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(5,25,42,.06) 18%, rgba(5,25,42,.28) 48%, rgba(5,25,42,.83) 100%); content: ""; }
+.gypsy-experience__content { position: absolute; right: clamp(1.75rem, 3vw, 3rem); bottom: clamp(1.75rem, 3vw, 3rem); left: clamp(1.75rem, 3vw, 3rem); display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
+.gypsy-experience__title { grid-column: 1; display: block; max-width: 13ch; font-family: var(--gypsy-display); font-size: clamp(2.4rem, 4vw, 4.25rem); line-height: .95; letter-spacing: -.025em; }
+.gypsy-experience__description { grid-column: 1; display: block; max-width: 27rem; margin-top: .85rem; font-size: clamp(.9rem, 1.15vw, 1.05rem); line-height: 1.45; }
+.gypsy-experience__icon { grid-column: 2; grid-row: 1 / 3; align-self: end; display: block; width: 1.875rem; height: 1.875rem; margin-left: 1rem; opacity: .82; transition: opacity .3s ease, transform .3s ease; }
+.gypsy-experience__icon svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.gypsy-experience:hover img, .gypsy-experience:focus-visible img { transform: scale(1.025); }
+.gypsy-experience:hover .gypsy-experience__icon, .gypsy-experience:focus-visible .gypsy-experience__icon { opacity: 1; transform: translateY(-2px); }
+.gypsy-experience:focus-visible { outline: 2px solid #fff; outline-offset: -6px; }
+.gypsy-experience:active::after { position: absolute; z-index: -1; inset: 0; background: rgba(255,255,255,.06); content: ""; }
+.gypsy-experiences__sunset { max-width: 32rem; margin: clamp(3rem, 6vw, 5rem) 0 0 auto; color: rgba(255,255,255,.68); font-family: var(--gypsy-display); font-size: clamp(1.35rem, 1.9vw, 1.75rem); font-style: italic; line-height: 1.25; }
+
+.gypsy-stay { overflow: hidden; padding: clamp(5.5rem, 10vw, 9rem) clamp(1.25rem, 5vw, 5rem) clamp(6rem, 11vw, 10rem); background: var(--gypsy-cream); }
+.gypsy-stay__intro { padding-bottom: clamp(3rem, 5vw, 5rem); color: var(--gypsy-navy); }
+.gypsy-stay h2 { max-width: 12ch; font-size: clamp(4rem, 7.3vw, 8rem); }
+.gypsy-stay__composition { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); align-items: center; gap: clamp(2.5rem, 5vw, 6rem); }
+.gypsy-stay__image { grid-column: 1; width: 100%; margin: 0; aspect-ratio: 640 / 409; overflow: hidden; background: #b4c4c6; }
+.gypsy-stay__image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
+.gypsy-stay__story { grid-column: 2; margin: 0; padding: 0; background: var(--gypsy-cream); }
+.gypsy-stay__story p { max-width: 32rem; margin: 0 0 1.35rem; font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.65; }
+.gypsy-stay__story p:first-child { color: var(--gypsy-navy); font-family: var(--gypsy-display); font-size: clamp(1.7rem, 2vw, 2rem); line-height: 1.2; }
+.gypsy-stay__story p:last-child { margin-bottom: 0; }
+.gypsy-stay__closing { display: grid; grid-template-columns: minmax(0, 1fr) minmax(14rem, .35fr); align-items: end; gap: clamp(2rem, 7vw, 8rem); margin-top: clamp(3rem, 5vw, 5rem); }
+.gypsy-stay__closing > p:first-child { max-width: 33rem; margin: 0; color: var(--gypsy-navy); font-family: var(--gypsy-display); font-size: clamp(1.75rem, 2.4vw, 2.5rem); font-style: italic; line-height: 1.1; }
+.gypsy-stay__planned { max-width: 18rem; margin: 0; color: #66727b; font-size: .78rem; line-height: 1.5; }
+
+@media (max-width: 1100px) {
+  .gypsy-stay__composition { grid-template-columns: 1fr; gap: clamp(2.5rem, 5vw, 4rem); }
+  .gypsy-stay__image, .gypsy-stay__story { grid-column: 1; }
+  .gypsy-stay__story { max-width: 44rem; }
+}
+@media (max-width: 900px) {
+  .gypsy-experience { min-height: 25rem; }
+}
+@media (max-width: 640px) {
+  .gypsy-experiences, .gypsy-stay { padding-right: 1.25rem; padding-left: 1.25rem; }
+  .gypsy-experiences h2, .gypsy-stay h2 { font-size: clamp(3.6rem, 14vw, 5rem); }
+  .gypsy-experiences__grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .gypsy-experience { min-height: 0; height: 27rem; }
+  .gypsy-experience__title { font-size: clamp(2.6rem, 10vw, 3.6rem); }
+  .gypsy-experience__description { max-width: 19rem; font-size: .92rem; }
+  .gypsy-experiences__sunset { margin-top: 2.5rem; }
+  .gypsy-stay__image { width: calc(100% + 2.5rem); margin-left: -1.25rem; }
+  .gypsy-stay__story { width: 100%; max-width: none; }
+  .gypsy-stay__story p:first-child { font-size: 1.7rem; }
+  .gypsy-stay__closing { grid-template-columns: 1fr; gap: 1.5rem; }
+  .gypsy-stay__planned { max-width: 21rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gypsy-experience img, .gypsy-experience__icon { transition: none; }
+}
+
+/* Milestone 3: an illustrative local chart and the tender-led way to explore. */
+.gypsy-explore { padding: clamp(6rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem) clamp(5rem, 9vw, 8rem); color: var(--gypsy-cream); background: var(--gypsy-ocean); }
+.gypsy-explore__inner { max-width: 1440px; margin: 0 auto; }
+.gypsy-explore__intro { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(3rem, 8vw, 9rem); align-items: start; padding-bottom: clamp(4rem, 8vw, 7rem); }
+.gypsy-explore h2 { max-width: 10ch; margin: 0; font-family: var(--gypsy-display); font-size: clamp(4rem, 7.3vw, 8rem); font-weight: 400; letter-spacing: -.034em; line-height: .94; text-wrap: balance; }
+.gypsy-explore__copy { max-width: 36rem; padding-top: .5rem; }
+.gypsy-explore__copy p { margin: 0 0 1.3rem; font-size: clamp(1rem, 1.3vw, 1.16rem); line-height: 1.65; }
+.gypsy-explore__copy p:last-child { margin-bottom: 0; }
+.gypsy-explore__copy .gypsy-explore__lead { max-width: 27rem; margin-bottom: 2rem; color: #f3eadd; font-family: var(--gypsy-display); font-size: clamp(1.8rem, 2.55vw, 2.65rem); font-style: italic; line-height: 1.13; }
+.gypsy-explore__chart { margin: 0; }
+.gypsy-explore__chart picture, .gypsy-explore__chart img { display: block; width: 100%; }
+.gypsy-explore__chart img { height: auto; }
+.gypsy-explore__chart figcaption { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; padding-top: 1.35rem; }
+.gypsy-explore__chart figcaption span { color: #e8dfcf; font-family: var(--gypsy-display); font-size: clamp(1.45rem, 2vw, 2rem); font-style: italic; line-height: 1.1; }
+.gypsy-explore__chart figcaption small { color: rgba(245,240,231,.59); font-size: .7rem; letter-spacing: .11em; text-transform: uppercase; white-space: nowrap; }
+@media (max-width: 900px) {
+  .gypsy-explore__intro { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+@media (max-width: 860px) {
+  .gypsy-explore { padding-right: 1.25rem; padding-left: 1.25rem; }
+  .gypsy-explore__chart { width: calc(100% + 2.5rem); margin-left: -1.25rem; }
+  .gypsy-explore__chart figcaption { flex-direction: column; align-items: flex-start; gap: .7rem; padding-right: 1.25rem; padding-left: 1.25rem; }
+  .gypsy-explore__chart figcaption small { white-space: normal; }
+}
+
+/* Milestone 4: editorial water stories; Milestones 1–3 above remain locked. */
+.gypsy-water { --gypsy-water-frame-gap: clamp(8px, .8vw, 12px); padding: clamp(6rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem) clamp(6rem, 11vw, 10rem); color: var(--gypsy-ink); background: var(--gypsy-cream); }
+.gypsy-water__inner { max-width: 1440px; margin: 0 auto; }
+.gypsy-water__intro { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: end; gap: clamp(2rem, 7vw, 8rem); margin-bottom: clamp(4.5rem, 8vw, 8rem); }
+.gypsy-water__eyebrow { grid-column: 1 / -1; display: flex; align-items: center; gap: 1rem; margin: 0 0 -.5rem; color: var(--gypsy-ocean); font-size: .75rem; letter-spacing: .17em; text-transform: uppercase; }
+.gypsy-water__eyebrow::before { display: block; width: 2.75rem; height: 1px; background: currentColor; content: ""; }
+.gypsy-water h2, .gypsy-water h3 { margin: 0; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-weight: 400; letter-spacing: -.034em; line-height: .94; text-wrap: balance; }
+.gypsy-water h2 { max-width: 12ch; font-size: clamp(4rem, 7.3vw, 8rem); }
+.gypsy-water__introduction { max-width: 31rem; margin: 0 0 .2rem; font-size: clamp(1.05rem, 1.4vw, 1.23rem); line-height: 1.6; }
+.gypsy-water-story { display: grid; align-items: center; gap: clamp(2.5rem, 6vw, 7rem); }
+.gypsy-water-story + .gypsy-water-story { margin-top: clamp(6rem, 11vw, 11rem); }
+.gypsy-water-story--wildlife { grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr); }
+.gypsy-water-story--surf { grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); }
+.gypsy-water-story__image { position: relative; min-width: 0; width: 100%; margin: 0; aspect-ratio: 1.3; background: var(--gypsy-ocean); }
+.gypsy-water-story__image img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.gypsy-water-story--wildlife .gypsy-water-story__image::after, .gypsy-water-story--surf .gypsy-water-story__image::after, .gypsy-water-story__duo .gypsy-water-story__image::after { position: absolute; inset: calc(0px - var(--gypsy-water-frame-gap)); border: 1px solid var(--gypsy-ocean); opacity: .36; pointer-events: none; content: ""; }
+.gypsy-water-story--wildlife .gypsy-water-story__image img { object-position: 58% center; }
+.gypsy-water-story--surf .gypsy-water-story__image img { object-position: center 62%; }
+.gypsy-water-story__copy { min-width: 0; }
+.gypsy-water-story__icon { display: block; width: 2rem; height: 2rem; margin-bottom: 1.7rem; color: var(--gypsy-ocean); }
+.gypsy-water-story__icon svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.gypsy-water h3 { max-width: 12ch; font-size: clamp(3.25rem, 5vw, 5.8rem); }
+.gypsy-water-story__copy p { max-width: 34rem; margin: 0 0 1.25rem; font-size: clamp(1rem, 1.3vw, 1.15rem); line-height: 1.65; }
+.gypsy-water-story__copy p:last-child { margin-bottom: 0; }
+.gypsy-water-story__copy .gypsy-water-story__lead { max-width: 31rem; margin: 1.7rem 0 1.3rem; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.85rem, 2.4vw, 2.55rem); font-style: italic; line-height: 1.16; }
+.gypsy-water-story__copy .gypsy-water-story__closing { max-width: 31rem; margin-top: 1.9rem; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.55rem, 2vw, 2.15rem); font-style: italic; line-height: 1.17; }
+.gypsy-water-story__copy .gypsy-water-story__note { max-width: 31rem; margin-top: 1.8rem; color: #64717a; font-size: .8rem; line-height: 1.55; }
+.gypsy-water-story--fishing { display: block; }
+.gypsy-water-story__duo { position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(1.75rem, 2.8vw, 2.5rem); }
+.gypsy-water-story__duo .gypsy-water-story__image { height: clamp(30rem, 46vw, 43rem); aspect-ratio: auto; }
+.gypsy-water-story__image--fishing img { object-position: 42% center; }
+.gypsy-water-story__image--spearfishing img { object-position: center 48%; }
+.gypsy-water-story__below { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); align-items: start; gap: clamp(3rem, 8vw, 9rem); margin-top: clamp(2.5rem, 4vw, 4.5rem); }
+.gypsy-water-story__heading .gypsy-water-story__icon { margin-bottom: 1.35rem; }
+
+@media (max-width: 900px) {
+  .gypsy-water__intro { grid-template-columns: 1fr; gap: 1.7rem; }
+  .gypsy-water__eyebrow { grid-column: 1; margin-bottom: .2rem; }
+  .gypsy-water-story--wildlife, .gypsy-water-story--surf { grid-template-columns: 1fr; gap: 2.5rem; }
+  .gypsy-water-story--surf .gypsy-water-story__image { order: -1; }
+  .gypsy-water-story__image { aspect-ratio: 1.5; }
+  .gypsy-water-story__below { grid-template-columns: 1fr; gap: 1.5rem; }
+  .gypsy-water-story__heading .gypsy-water-story__icon { margin-bottom: 1.2rem; }
+}
+@media (max-width: 640px) {
+  .gypsy-water { padding-right: 1.25rem; padding-left: 1.25rem; }
+  .gypsy-water__intro { margin-bottom: 3.5rem; }
+  .gypsy-water h2 { font-size: clamp(3.6rem, 14vw, 5rem); }
+  .gypsy-water h3 { font-size: clamp(3rem, 12vw, 4.25rem); }
+  .gypsy-water-story + .gypsy-water-story { margin-top: 5.5rem; }
+  .gypsy-water-story__image { aspect-ratio: 1.16; }
+  .gypsy-water-story__duo { grid-template-columns: 1fr; gap: 2rem; }
+  .gypsy-water-story__duo .gypsy-water-story__image { height: auto; aspect-ratio: 4 / 5; }
+  .gypsy-water-story__below { margin-top: 2.5rem; }
+  .gypsy-water-story__icon { margin-bottom: 1.25rem; }
+}
+
+/* Milestone 5: concierge. Milestones 1–4 above are approved and locked. */
+.gypsy-concierge { padding: clamp(7rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem); color: var(--gypsy-cream); background: var(--gypsy-ocean); }
+.gypsy-concierge__inner { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: clamp(4rem, 9vw, 10rem); max-width: 1440px; margin: 0 auto; }
+.gypsy-concierge__intro { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+.gypsy-concierge__eyebrow { margin: 0 0 2.2rem; color: rgba(245,240,231,.7); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; }
+.gypsy-concierge h2 { max-width: 11ch; margin: 0; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(4.5rem, 6.4vw, 6.75rem); font-weight: 400; letter-spacing: -.035em; line-height: .95; text-wrap: balance; }
+.gypsy-concierge__lead { max-width: 28rem; margin: clamp(2rem, 3.5vw, 3.25rem) 0 0; color: rgba(245,240,231,.89); font-size: clamp(1.08rem, 1.45vw, 1.32rem); line-height: 1.6; }
+.gypsy-concierge__closing { max-width: 28rem; margin: auto 0 0; padding-top: 3rem; color: rgba(245,240,231,.72); font-family: var(--gypsy-display); font-size: 1.4rem; font-style: italic; line-height: 1.35; }
+.gypsy-concierge__services { margin: 0; padding: 0; border-top: 1px solid rgba(245,240,231,.22); }
+.gypsy-concierge__service { display: grid; grid-template-columns: minmax(9rem, .4fr) minmax(0, .6fr); gap: clamp(1.25rem, 2.5vw, 2.75rem); padding: clamp(1.55rem, 2.5vw, 2.3rem) 0; border-bottom: 1px solid rgba(245,240,231,.22); }
+.gypsy-concierge__service dt { color: #e9ddc9; font-size: .73rem; font-weight: 500; letter-spacing: .15em; line-height: 1.5; text-transform: uppercase; }
+.gypsy-concierge__service dd { margin: 0; color: rgba(245,240,231,.85); font-size: 1rem; line-height: 1.6; }
+@media (max-width: 900px) {
+  .gypsy-concierge__inner { grid-template-columns: 1fr; gap: clamp(3.5rem, 8vw, 5rem); }
+  .gypsy-concierge__closing { margin-top: 0; }
+}
+@media (max-width: 640px) {
+  .gypsy-concierge { padding: 6rem 1.25rem; }
+  .gypsy-concierge__eyebrow { margin-bottom: 1.7rem; }
+  .gypsy-concierge h2 { font-size: clamp(3.65rem, 13vw, 5rem); }
+  .gypsy-concierge__lead { margin-top: 2rem; }
+  .gypsy-concierge__closing { padding-top: 2rem; }
+  .gypsy-concierge__service { grid-template-columns: 1fr; gap: .55rem; padding: 1.6rem 0; }
+}
+
+/* Milestone 6: private expeditions. Milestones 1–5 above are approved and locked. */
+.gypsy-expeditions { padding: clamp(7rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem) clamp(7rem, 11vw, 10rem); color: var(--gypsy-ink); background: var(--gypsy-cream); }
+.gypsy-expeditions__inner { max-width: 1440px; margin: 0 auto; }
+.gypsy-expeditions__eyebrow { margin: 0 0 clamp(2.25rem, 5vw, 4rem); color: var(--gypsy-ocean); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; }
+.gypsy-expeditions__intro-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: end; gap: clamp(3rem, 8vw, 9rem); }
+.gypsy-expeditions h2, .gypsy-expeditions h3 { margin: 0; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-weight: 400; letter-spacing: -.035em; line-height: .96; text-wrap: balance; }
+.gypsy-expeditions h2 { font-size: clamp(5rem, 8vw, 8.5rem); }
+.gypsy-expeditions__intro-copy { max-width: 35rem; }
+.gypsy-expeditions__intro-copy p { margin: 0; font-size: clamp(1.06rem, 1.42vw, 1.28rem); line-height: 1.65; }
+.gypsy-expeditions__intro-copy .gypsy-expeditions__qualification { margin-top: 1.7rem; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.45rem, 2vw, 2rem); font-style: italic; line-height: 1.2; }
+.gypsy-expeditions__chart { margin: clamp(4.5rem, 8vw, 7rem) 0 0; }
+.gypsy-expeditions__chart picture, .gypsy-expeditions__chart img { display: block; width: 100%; }
+.gypsy-expeditions__chart picture { --gypsy-chart-frame-gap: clamp(8px, .8vw, 12px); outline: 1px solid rgba(12,48,70,.36); outline-offset: var(--gypsy-chart-frame-gap); }
+.gypsy-expeditions__chart img { height: auto; background: var(--gypsy-ocean); }
+.gypsy-expeditions__chart figcaption { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; padding-top: 1.45rem; }
+.gypsy-expeditions__chart figcaption span { color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.5rem, 2vw, 2rem); font-style: italic; line-height: 1.15; }
+.gypsy-expeditions__chart figcaption small { color: #66737b; font-size: .7rem; letter-spacing: .11em; text-transform: uppercase; white-space: nowrap; }
+.gypsy-expeditions__invitation { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .83fr); gap: clamp(3rem, 8vw, 9rem); margin-top: clamp(6rem, 10vw, 9rem); padding-top: clamp(2.75rem, 4vw, 4rem); border-top: 1px solid rgba(12,48,70,.2); }
+.gypsy-expeditions h3 { max-width: 12ch; font-size: clamp(3.6rem, 5.6vw, 6rem); }
+.gypsy-expeditions__invitation-copy { max-width: 31rem; }
+.gypsy-expeditions__invitation-copy p { margin: 0 0 1.4rem; font-size: 1.05rem; line-height: 1.65; }
+.gypsy-expeditions__invitation-copy .gypsy-expeditions__invitation-lead { color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(2rem, 2.6vw, 2.65rem); font-style: italic; line-height: 1.18; }
+.gypsy-expeditions__link { display: inline-flex; align-items: center; gap: .8rem; margin-top: 1rem; padding-bottom: .55rem; border-bottom: 1px solid rgba(12,48,70,.55); color: var(--gypsy-ocean); font-size: .76rem; font-weight: 500; letter-spacing: .13em; line-height: 1.3; text-decoration: none; text-transform: uppercase; transition: border-color .25s ease, gap .25s ease; }
+.gypsy-expeditions__link:hover { gap: 1.15rem; border-color: var(--gypsy-ocean); }
+.gypsy-expeditions__link:focus-visible { outline: 1px solid var(--gypsy-ocean); outline-offset: 5px; }
+@media (max-width: 900px) {
+  .gypsy-expeditions__intro-grid, .gypsy-expeditions__invitation { grid-template-columns: 1fr; gap: 2.5rem; }
+  .gypsy-expeditions__intro-copy { max-width: 40rem; }
+}
+@media (max-width: 780px) {
+  .gypsy-expeditions { padding-right: 1.25rem; padding-left: 1.25rem; }
+  .gypsy-expeditions__chart picture { width: calc(100% + 2.5rem - var(--gypsy-chart-frame-gap) - var(--gypsy-chart-frame-gap) - 4px); margin-left: calc(-1.25rem + var(--gypsy-chart-frame-gap) + 2px); }
+  .gypsy-expeditions__chart figcaption { flex-direction: column; align-items: flex-start; gap: .65rem; }
+  .gypsy-expeditions__chart figcaption small { white-space: normal; }
+}
+@media (max-width: 640px) {
+  .gypsy-expeditions { padding-top: 6rem; padding-bottom: 6rem; }
+  .gypsy-expeditions__eyebrow { margin-bottom: 2rem; }
+  .gypsy-expeditions h2 { font-size: clamp(4.6rem, 17vw, 6.25rem); }
+  .gypsy-expeditions__intro-grid { gap: 1.5rem; }
+  .gypsy-expeditions__chart { margin-top: 3.75rem; }
+  .gypsy-expeditions__invitation { gap: 2rem; margin-top: 5rem; }
+  .gypsy-expeditions h3 { font-size: clamp(3.5rem, 12vw, 4.75rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gypsy-expeditions__link { transition: none; }
+}
+
+/* Milestone 7: Meet Gypsy Laut. Milestones 1–6 above are approved and locked. */
+.gypsy-boat { padding: clamp(7rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem) clamp(7rem, 11vw, 10rem); color: var(--gypsy-cream); background: var(--gypsy-ocean); }
+.gypsy-boat__inner { max-width: 1440px; margin: 0 auto; }
+.gypsy-boat__eyebrow { margin: 0 0 clamp(2.25rem, 4vw, 3.75rem); color: rgba(245,240,231,.72); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; }
+.gypsy-boat__intro-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(14rem, .55fr); align-items: end; gap: clamp(3rem, 7vw, 8rem); }
+.gypsy-boat h2 { max-width: 13ch; margin: 0; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(4.5rem, 7vw, 7.5rem); font-weight: 400; letter-spacing: -.04em; line-height: .92; text-wrap: balance; }
+.gypsy-boat__subline { max-width: 15ch; margin: 0 0 .55rem; color: rgba(245,240,231,.84); font-family: var(--gypsy-display); font-size: clamp(2rem, 2.8vw, 3rem); font-style: italic; line-height: 1.12; }
+.gypsy-boat__portrait { width: 100%; margin: clamp(4rem, 7vw, 7rem) 0 0; aspect-ratio: 1.8; overflow: hidden; background: #14374a; }
+.gypsy-boat__portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 54%; }
+.gypsy-boat__story { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(3rem, 8vw, 9rem); margin-top: clamp(3.25rem, 5vw, 5.5rem); }
+.gypsy-boat__story p { max-width: 38rem; margin: 0; color: rgba(245,240,231,.85); font-size: clamp(1.04rem, 1.28vw, 1.18rem); line-height: 1.75; }
+.gypsy-boat__story p:first-child { color: var(--gypsy-cream); font-size: clamp(1.16rem, 1.5vw, 1.36rem); line-height: 1.65; }
+.gypsy-boat__specs { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(1.15rem, 2.5vw, 3rem); margin: clamp(5.5rem, 9vw, 9rem) 0 0; padding: 0; }
+.gypsy-boat__spec { display: flex; flex-direction: column; min-width: 0; padding-top: 1.35rem; border-top: 1px solid rgba(245,240,231,.27); }
+.gypsy-boat__spec dd { order: -1; margin: 0; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(1.55rem, 2.5vw, 2.55rem); font-weight: 500; letter-spacing: -.025em; line-height: 1.05; white-space: nowrap; }
+.gypsy-boat__spec dt { margin-top: .9rem; color: rgba(245,240,231,.66); font-size: .72rem; font-weight: 500; letter-spacing: .12em; line-height: 1.5; text-transform: uppercase; }
+@media (max-width: 1100px) {
+  .gypsy-boat__specs { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 2.75rem; }
+}
+@media (max-width: 900px) {
+  .gypsy-boat__intro-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+  .gypsy-boat__subline { max-width: none; }
+  .gypsy-boat__story { grid-template-columns: 1fr; gap: 1.4rem; }
+}
+@media (max-width: 640px) {
+  .gypsy-boat { padding: 6rem 1.25rem; }
+  .gypsy-boat__eyebrow { margin-bottom: 2rem; }
+  .gypsy-boat h2 { font-size: clamp(3.7rem, 13vw, 5.2rem); }
+  .gypsy-boat__subline { font-size: clamp(1.9rem, 7.5vw, 2.4rem); }
+  .gypsy-boat__portrait { width: calc(100% + 2.5rem); margin: 3.75rem 0 0 -1.25rem; aspect-ratio: 1.6; }
+  .gypsy-boat__portrait img { object-position: center center; }
+  .gypsy-boat__story { margin-top: 3rem; }
+  .gypsy-boat__specs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 1.25rem; margin-top: 5rem; }
+  .gypsy-boat__spec dd { font-size: clamp(1.55rem, 6vw, 2rem); white-space: normal; }
+}
+
+/* Milestone 8: Life Aboard gallery. Milestones 1–7 above are approved and locked. */
+.gypsy-gallery { --gypsy-gallery-frame-gap: clamp(8px, .8vw, 12px); padding: clamp(7rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem) clamp(7rem, 11vw, 10rem); color: var(--gypsy-ink); background: var(--gypsy-cream); }
+.gypsy-gallery__inner { max-width: 1440px; margin: 0 auto; }
+.gypsy-gallery__intro { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(15rem, .7fr); align-items: end; gap: clamp(3rem, 7vw, 8rem); margin-bottom: clamp(4.5rem, 8vw, 8rem); }
+.gypsy-gallery__eyebrow { margin: 0 0 2rem; color: var(--gypsy-ocean); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; }
+.gypsy-gallery h2 { max-width: 12ch; margin: 0; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(4rem, 7vw, 7.5rem); font-weight: 400; letter-spacing: -.04em; line-height: .94; text-wrap: balance; }
+.gypsy-gallery__supporting { max-width: 27rem; margin: 0 0 .35rem; color: #55636b; font-size: clamp(1rem, 1.3vw, 1.18rem); line-height: 1.65; }
+.gypsy-gallery__sequence { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(1.25rem, 2.5vw, 2.75rem); row-gap: clamp(4.25rem, 8vw, 8rem); align-items: start; }
+.gypsy-gallery__figure { position: relative; min-width: 0; margin: 0; align-self: start; }
+.gypsy-gallery__figure::after { position: absolute; inset: calc(0px - var(--gypsy-gallery-frame-gap)); border: 1px solid var(--gypsy-ocean); opacity: .36; pointer-events: none; content: ""; }
+.gypsy-gallery__image { position: relative; width: 100%; overflow: hidden; background: #d1d9d8; }
+.gypsy-gallery__image img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.gypsy-gallery__figure--vessel { grid-column: 1 / span 8; grid-row: 1; }
+.gypsy-gallery__figure--vessel .gypsy-gallery__image { aspect-ratio: 1.55; }
+.gypsy-gallery__figure--vessel img { object-position: 48% center; }
+.gypsy-gallery__figure--deck { grid-column: 9 / span 4; grid-row: 1; }
+.gypsy-gallery__figure--deck .gypsy-gallery__image { aspect-ratio: .85; }
+.gypsy-gallery__figure--deck img { object-position: 50% center; }
+.gypsy-gallery__figure--saloon { grid-column: 2 / span 6; grid-row: 2; }
+.gypsy-gallery__figure--saloon .gypsy-gallery__image { aspect-ratio: 1.35; }
+.gypsy-gallery__figure--saloon img { object-position: 42% center; }
+.gypsy-gallery__figure--berths { grid-column: 8 / span 5; grid-row: 2; }
+.gypsy-gallery__figure--berths .gypsy-gallery__image { aspect-ratio: 1; }
+.gypsy-gallery__figure--berths img { object-position: 51% center; }
+.gypsy-gallery__figure--water { grid-column: 1 / span 4; grid-row: 3; align-self: end; }
+.gypsy-gallery__figure--water .gypsy-gallery__image { aspect-ratio: 1.05; }
+.gypsy-gallery__figure--water img { object-position: 49% center; }
+.gypsy-gallery__figure--evening { grid-column: 5 / span 8; grid-row: 3; }
+.gypsy-gallery__figure--evening .gypsy-gallery__image { aspect-ratio: 1.68; }
+.gypsy-gallery__figure--evening img { object-position: 54% center; }
+@media (max-width: 800px) {
+  .gypsy-gallery__intro { grid-template-columns: 1fr; gap: 1.65rem; margin-bottom: 3.5rem; }
+  .gypsy-gallery__sequence { grid-template-columns: 1fr; row-gap: clamp(2.75rem, 7vw, 4.5rem); }
+  .gypsy-gallery__sequence > .gypsy-gallery__figure { grid-column: 1; grid-row: auto; }
+  .gypsy-gallery__figure--vessel .gypsy-gallery__image { aspect-ratio: 1.35; }
+  .gypsy-gallery__figure--deck .gypsy-gallery__image { aspect-ratio: 1.15; }
+  .gypsy-gallery__figure--saloon .gypsy-gallery__image { aspect-ratio: 1.3; }
+  .gypsy-gallery__figure--berths .gypsy-gallery__image { aspect-ratio: 1.05; }
+  .gypsy-gallery__figure--water .gypsy-gallery__image { aspect-ratio: 1.25; }
+  .gypsy-gallery__figure--evening .gypsy-gallery__image { aspect-ratio: 1.4; }
+}
+@media (max-width: 640px) {
+  .gypsy-gallery { padding: 6rem 1.25rem; }
+  .gypsy-gallery__eyebrow { margin-bottom: 1.5rem; }
+  .gypsy-gallery h2 { font-size: clamp(3.7rem, 13vw, 5.2rem); }
+  .gypsy-gallery__figure--vessel, .gypsy-gallery__figure--evening { width: calc(100% + 2.5rem - var(--gypsy-gallery-frame-gap) - var(--gypsy-gallery-frame-gap) - 4px); margin-left: calc(-1.25rem + var(--gypsy-gallery-frame-gap) + 2px); }
+}
+
+/* v0.10.2 image-only framing: same detached gap and line as the action photos and gallery. */
+.gypsy-stay__image, .gypsy-boat__portrait { --gypsy-detached-frame-gap: clamp(8px, .8vw, 12px); outline: 1px solid rgba(12,48,70,.36); outline-offset: var(--gypsy-detached-frame-gap); }
+.gypsy-boat__portrait { outline-color: rgba(245,240,231,.36); }
+@media (max-width: 640px) {
+  .gypsy-stay__image, .gypsy-boat__portrait { width: calc(100% + 2.5rem - var(--gypsy-detached-frame-gap) - var(--gypsy-detached-frame-gap) - 4px); margin-left: calc(-1.25rem + var(--gypsy-detached-frame-gap) + 2px); }
+}
+
+/* Milestone 9: enquiry. Milestones 1–8 above remain approved and locked. */
+.gypsy-enquiry { padding: clamp(7rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem); color: var(--gypsy-cream); background: var(--gypsy-ocean); }
+.gypsy-enquiry__inner { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(4rem, 8vw, 9rem); max-width: 1440px; margin: 0 auto; }
+.gypsy-enquiry__intro, .gypsy-enquiry__form-wrap { min-width: 0; }
+.gypsy-enquiry__eyebrow { margin: 0 0 clamp(2.25rem, 4vw, 3.5rem); color: rgba(245,240,231,.72); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; }
+.gypsy-enquiry h2 { max-width: 10ch; margin: 0; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(4.5rem, 6.8vw, 7rem); font-weight: 400; letter-spacing: -.04em; line-height: .95; text-wrap: balance; }
+.gypsy-enquiry__lead { max-width: 28rem; margin: clamp(2.25rem, 4vw, 3.75rem) 0 0; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(1.7rem, 2.4vw, 2.4rem); line-height: 1.17; }
+.gypsy-enquiry__supporting { max-width: 29rem; margin: 1.5rem 0 0; color: rgba(245,240,231,.78); font-size: clamp(1rem, 1.25vw, 1.1rem); line-height: 1.7; }
+.gypsy-enquiry__whatsapp { max-width: 29rem; margin-top: clamp(4rem, 7vw, 7rem); padding-top: 1.5rem; border-top: 1px solid rgba(245,240,231,.22); }
+.gypsy-enquiry__whatsapp-heading { margin: 0; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(1.9rem, 2.4vw, 2.45rem); font-style: italic; line-height: 1.2; }
+.gypsy-enquiry__whatsapp p:not(.gypsy-enquiry__whatsapp-heading) { margin: .55rem 0 1.2rem; color: rgba(245,240,231,.77); font-size: .98rem; }
+.gypsy-enquiry__whatsapp-cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.4rem; min-height: 48px; padding: .55rem 0; border-bottom: 1px solid rgba(245,240,231,.5); color: rgba(245,240,231,.72); font-size: .78rem; font-weight: 500; letter-spacing: .12em; line-height: 1.3; text-transform: uppercase; }
+.gypsy-enquiry__whatsapp small { display: block; margin-top: .7rem; color: rgba(245,240,231,.57); font-size: .75rem; line-height: 1.5; }
+.gypsy-enquiry__form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.6rem, 2.7vw, 2.7rem) clamp(1.35rem, 2.6vw, 2.5rem); }
+.gypsy-enquiry__field { min-width: 0; }
+.gypsy-enquiry__field--wide, .gypsy-enquiry__actions { grid-column: 1 / -1; }
+.gypsy-enquiry__field label { display: block; margin-bottom: .45rem; color: rgba(245,240,231,.9); font-size: .74rem; font-weight: 500; letter-spacing: .12em; line-height: 1.5; text-transform: uppercase; }
+.gypsy-enquiry__field input, .gypsy-enquiry__field select, .gypsy-enquiry__field textarea { display: block; width: 100%; min-height: 48px; padding: .65rem 0; border: 0; border-bottom: 1px solid rgba(245,240,231,.38); border-radius: 0; background: transparent; color: var(--gypsy-cream); font: 400 1rem/1.5 var(--gypsy-sans); appearance: none; }
+.gypsy-enquiry__field textarea { min-height: 8rem; resize: vertical; }
+.gypsy-enquiry__field select { padding-right: 1.5rem; background-image: linear-gradient(45deg, transparent 50%, rgba(245,240,231,.75) 50%), linear-gradient(135deg, rgba(245,240,231,.75) 50%, transparent 50%); background-position: calc(100% - 12px) 53%, calc(100% - 7px) 53%; background-size: 5px 5px; background-repeat: no-repeat; cursor: pointer; }
+.gypsy-enquiry__field select option { color: var(--gypsy-ink); background: var(--gypsy-cream); }
+.gypsy-enquiry__field input:focus-visible, .gypsy-enquiry__field select:focus-visible, .gypsy-enquiry__field textarea:focus-visible { border-bottom-color: var(--gypsy-cream); outline: 2px solid var(--gypsy-sand); outline-offset: 4px; }
+.gypsy-enquiry__actions { margin-top: .35rem; }
+.gypsy-enquiry__submit { display: inline-flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: 50px; padding: .8rem 1.2rem; border: 1px solid var(--gypsy-cream); border-radius: 0; background: var(--gypsy-cream); color: var(--gypsy-ocean); font-size: .77rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; cursor: pointer; transition: color .2s ease, background-color .2s ease; }
+.gypsy-enquiry__submit:hover { background: transparent; color: var(--gypsy-cream); }
+.gypsy-enquiry__submit:focus-visible { outline: 2px solid var(--gypsy-sand); outline-offset: 4px; }
+.gypsy-enquiry__submit:disabled { opacity: .72; cursor: not-allowed; }
+.gypsy-enquiry__preview-note { margin: 1rem 0 0; color: rgba(245,240,231,.58); font-size: .75rem; line-height: 1.5; }
+.gypsy-enquiry__status { max-width: 34rem; margin: 1rem 0 0; color: var(--gypsy-sand); font-size: .85rem; line-height: 1.55; }
+.gypsy-enquiry__closing { margin: clamp(2.75rem, 5vw, 4.5rem) 0 0; padding-top: 1.5rem; border-top: 1px solid rgba(245,240,231,.22); color: rgba(245,240,231,.76); font-family: var(--gypsy-display); font-size: clamp(1.5rem, 2vw, 1.8rem); font-style: italic; line-height: 1.3; }
+@media (max-width: 900px) {
+  .gypsy-enquiry__inner { grid-template-columns: 1fr; gap: clamp(4rem, 8vw, 6rem); }
+  .gypsy-enquiry__supporting, .gypsy-enquiry__whatsapp { max-width: 38rem; }
+}
+@media (max-width: 640px) {
+  .gypsy-enquiry { padding: 6rem 1.25rem; }
+  .gypsy-enquiry h2 { font-size: clamp(3.9rem, 13vw, 5.2rem); }
+  .gypsy-enquiry__eyebrow { margin-bottom: 2rem; }
+  .gypsy-enquiry__lead { margin-top: 2rem; }
+  .gypsy-enquiry__whatsapp { margin-top: 3.5rem; }
+  .gypsy-enquiry__form { grid-template-columns: 1fr; gap: 1.7rem; }
+  .gypsy-enquiry__field--wide, .gypsy-enquiry__actions { grid-column: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gypsy-enquiry__submit { transition: none; }
+}
+
+  </style>
+</head>
+<body id="top">
+
+<header class="gypsy-header" aria-label="Primary navigation">
+  <div class="gypsy-header__inner">
+    <a class="gypsy-logo" href="#top" aria-label="Gypsy Laut home"><img src="gypsy-laut/assets/brand/gypsy-laut-logo-light.png" alt="Gypsy Laut" width="417" height="381"></a>
+    <nav class="gypsy-nav" id="gypsy-main-nav" aria-label="Main menu">
+      <a href="#concept">Stay Aboard</a>
+      <a href="#experiences">Experiences</a>
+      <a href="#expeditions">Expeditions</a>
+      <a href="#the-boat">The Boat</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#the-boat">About</a>
+      <a class="gypsy-enquire" href="#enquire">Enquire</a>
+    </nav>
+    <button class="gypsy-menu-button" type="button" aria-controls="gypsy-main-nav" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+
+
+
+
+<main id="gypsy-main">
+  <section class="gypsy-hero" aria-labelledby="gypsy-hero-title">
+    <div class="gypsy-hero__media" aria-hidden="true"><video autoplay muted loop playsinline poster="gypsy-laut/assets/images/gypsy-laut-bow-hero-sunset.png"><source src="gypsy-laut/assets/video/gypsy-laut-temp-hero.mp4" type="video/mp4"></video></div>
+    <div class="gypsy-hero__content">
+      <h1 id="gypsy-hero-title">Your private base on the Indonesian sea.</h1>
+      <p class="gypsy-hero__description">Stay aboard in Mushroom Bay. Explore Lembongan, Penida and beyond by sea.</p>
+      <div class="gypsy-actions"><a class="gypsy-button gypsy-button--solid" href="#experiences">Explore Experiences</a><a class="gypsy-button" href="#enquire">Check Availability</a></div>
+    </div>
+    <div class="gypsy-hero__edge"><p class="gypsy-location">Mushroom Bay · Nusa Lembongan · Indonesia</p><span class="gypsy-scroll-hint" aria-hidden="true">Scroll to explore</span></div>
+  </section>
+  <section class="gypsy-concept" id="concept" aria-labelledby="gypsy-concept-title">
+    <div class="gypsy-concept__grid">
+      <div><p class="gypsy-concept__label">A base on the water</p><h2 id="gypsy-concept-title">Stay on the water. Explore from it.</h2></div>
+      <div class="gypsy-concept__copy"><p>Gypsy Laut is your private floating base in Mushroom Bay, Nusa Lembongan.</p><p>Wake up on the sea, relax on deck, swim straight from the boat and head ashore whenever you feel like it.</p><p>Use the tender to explore beaches, reefs, surf breaks and neighbouring islands, or take Gypsy Laut further on a private expedition through Indonesia.</p><p class="gypsy-concept__supporting">Sleep aboard. Go ashore when you want. Head further when adventure calls.</p></div>
+    </div>
+  </section>
+  <section class="gypsy-experiences" id="experiences" aria-labelledby="gypsy-experiences-title">
+    <div class="gypsy-experiences__inner">
+      <div class="gypsy-experiences__intro"><h2 id="gypsy-experiences-title">Choose your experience.</h2></div>
+      <div class="gypsy-experiences__grid">
+        <a class="gypsy-experience" href="experiences/stay-aboard/"><img src="gypsy-laut/assets/images/gypsy-laut-saloon-lounge.png" alt="Timber ceiling and lounge seating in Gypsy Laut's saloon" width="1688" height="932" loading="lazy" decoding="async"><span class="gypsy-experience__content"><span class="gypsy-experience__title">Stay Aboard</span><span class="gypsy-experience__description">Your own floating home in Mushroom Bay.</span><span class="gypsy-experience__icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><circle cx="16" cy="5" r="2"/><path d="M16 7v20M10 12h12M5 19c0 5 4.5 9 11 9s11-4 11-9M5 19l3 2M27 19l-3 2"/></svg></span></span></a>
+        <a class="gypsy-experience" href="experiences/private-day-charter/"><img src="gypsy-laut/assets/images/gypsy-laut-bow-sunpads.png" alt="Sunpads on Gypsy Laut's bow overlooking the bay" width="1681" height="935" loading="lazy" decoding="async"><span class="gypsy-experience__content"><span class="gypsy-experience__title">Private Day Charter</span><span class="gypsy-experience__description">Swim, explore, snorkel, eat, relax and build the day around you.</span><span class="gypsy-experience__icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M4 18h24l-4 7H10zM10 15h11"/></svg></span></span></a>
+        <a class="gypsy-experience" href="experiences/wildlife-snorkelling-scuba/"><img src="gypsy-laut/assets/images/gypsy-laut-bow-daylight.png" alt="Gypsy Laut's bow overlooking open water near the islands" width="1681" height="935" loading="lazy" decoding="async"><span class="gypsy-experience__content"><span class="gypsy-experience__title">Wildlife, Snorkelling &amp; Scuba</span><span class="gypsy-experience__description">Reefs, mantas, seasonal mola and premium dive partners.</span><span class="gypsy-experience__icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M16 10c-2-2-4-2-7 0l-6 3c2 4 5 7 10 8l3-2 3 2c5-1 8-4 10-8l-6-3c-3-2-5-2-7 0zM16 19v9"/></svg></span></span></a>
+        <a class="gypsy-experience" href="experiences/surf-paddle/"><img src="gypsy-laut/assets/images/surf-action.jpg" alt="Surfers riding a breaking wave" width="2560" height="1707" loading="lazy" decoding="async"><span class="gypsy-experience__content"><span class="gypsy-experience__title">Surf &amp; Paddle</span><span class="gypsy-experience__description">Surf missions, local guides, boards aboard and paddle boards.</span><span class="gypsy-experience__icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M16 3c-4.5 4-7 9-7 14s2.5 9 7 12c4.5-3 7-7 7-12S20.5 7 16 3zM16 4v23"/></svg></span></span></a>
+        <a class="gypsy-experience" href="experiences/fishing-spearfishing/"><img src="gypsy-laut/assets/images/gypsy-laut-tender-polished.png" alt="Gypsy Laut's centre-console tender moored in the harbour" width="1448" height="1086" loading="lazy" decoding="async"><span class="gypsy-experience__content"><span class="gypsy-experience__title">Fishing &amp; Spearfishing</span><span class="gypsy-experience__description">From relaxed fishing to curated specialist experiences.</span><span class="gypsy-experience__icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><circle cx="13" cy="5" r="2"/><path d="M13 7v14a7 7 0 0 0 14 0v-5M24 18l3-2 2 3"/></svg></span></span></a>
+        <a class="gypsy-experience" href="experiences/private-expeditions/"><img src="gypsy-laut/assets/images/gypsy-laut-bow-hero-sunset.png" alt="Gypsy Laut at anchor against a warm sunset" width="1675" height="939" loading="lazy" decoding="async"><span class="gypsy-experience__content"><span class="gypsy-experience__title">Private Expeditions</span><span class="gypsy-experience__description">Multi-day journeys through Indonesia.</span><span class="gypsy-experience__icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><circle cx="16" cy="16" r="12"/><path d="M16 7l2.5 6.5L25 16l-6.5 2.5L16 25l-2.5-6.5L7 16l6.5-2.5z"/></svg></span></span></a>
+      </div>
+      <p class="gypsy-experiences__sunset">Just here for the evening? Ask about private sunset experiences from Mushroom Bay.</p>
+    </div>
+  </section>
+  <section class="gypsy-stay" id="live-aboard" aria-labelledby="gypsy-stay-title">
+    <div class="gypsy-stay__inner">
+      <div class="gypsy-stay__intro"><h2 id="gypsy-stay-title">Your own place on the water.</h2></div>
+      <div class="gypsy-stay__composition">
+        <figure class="gypsy-stay__image"><img src="gypsy-laut/assets/images/gypsy-laut-upper-deck-sunset.png" alt="Cushioned upper-deck lounge aboard Gypsy Laut at sunset" width="1683" height="934" loading="lazy" decoding="async"></figure>
+        <div class="gypsy-stay__story"><p>Wake up on the water. Have coffee or breakfast on deck, then swim straight from the boat. Take the tender ashore for beaches, lunch or a wander around the island, then come back aboard for sunset, dinner and the night.</p><p>There’s space to slow down and settle in, with generous outdoor lounging, an indoor saloon, air conditioning, Starlink and flatscreen TVs. Surfboards and paddle boards are aboard when you feel like heading out. Provisioning can be tailored to your stay, and a private chef can be arranged.</p></div>
+      </div>
+      <div class="gypsy-stay__closing"><p>Breakfast on deck. A swim before lunch. Cold drinks at sunset. Your own place on the water.</p><p class="gypsy-stay__planned">An outdoor projector and screen for movie nights on deck are planned.</p></div>
+    </div>
+  </section>
+  <section class="gypsy-explore" id="explore-from-here" aria-labelledby="gypsy-explore-title">
+    <div class="gypsy-explore__inner">
+      <div class="gypsy-explore__intro">
+        <h2 id="gypsy-explore-title">Go further from here.</h2>
+        <div class="gypsy-explore__copy">
+          <p class="gypsy-explore__lead">Gypsy Laut is the base. The tender gets you into the action.</p>
+          <p>Wake up in Mushroom Bay and decide where the day takes you. A beach on Lembongan, reefs around Penida, a surf session, a snorkel stop or lunch ashore — the tender makes the islands part of your backyard.</p>
+          <p>The 5.2m aluminium centre-console, with its 90hp Suzuki, links the boat to shore and sea — for island access, surf transfers, fishing runs, snorkelling and dive logistics.</p>
+        </div>
+      </div>
+      <figure class="gypsy-explore__chart">
+        <picture>
+          <source media="(max-width: 860px)" srcset="gypsy-laut/assets/maps/local-chart-mobile.svg" type="image/svg+xml" width="560" height="720">
+          <img src="gypsy-laut/assets/maps/local-primary-chart-desktop.svg" alt="Illustrative nautical chart of surf, reef and manta areas accessible from Gypsy Laut at Mushroom Bay, with Lembongan, Ceningan and Penida as the focus" width="1200" height="680" loading="lazy" decoding="async">
+        </picture>
+        <span class="screen-reader-text">Illustrative local chart: Gypsy Laut at Mushroom Bay is the starting point. Around Nusa Lembongan and Ceningan are the surf breaks Shipwrecks, Razors, Lacerations, Playgrounds, Tamarind and Ceningan or Mahana Point, plus Mangrove Point and specialist Blue Corner. Around Nusa Penida are Gamat Bay, Toyapakeh, Crystal Bay, SD Point, Ped, Manta Bay and the separate southern Manta Point. Quieter labels show Kelingking, Broken Beach, Angel’s Billabong, Devil’s Tear, Jungut Batu and the Mangroves. Three broad fishing-water cues are illustrative only, not specific authorized locations, and require skipper guidance and current conservation-zone checks before publication. A small inset locates the islands between Bali and Lombok, with the northern Gilis. This is not a navigation chart or an itinerary.</span>
+        <figcaption><span>Your playground, just beyond the anchorage.</span><small>Illustrative chart · not for navigation</small></figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="gypsy-water" id="on-the-water" aria-labelledby="gypsy-water-title">
+    <div class="gypsy-water__inner">
+      <header class="gypsy-water__intro">
+        <p class="gypsy-water__eyebrow">On the Water</p>
+        <h2 id="gypsy-water-title">Choose the day as it comes.</h2>
+        <p class="gypsy-water__introduction">Reefs, waves, open water and whatever looks good that day. From Gypsy Laut, the islands are there to explore.</p>
+      </header>
+
+      <article class="gypsy-water-story gypsy-water-story--wildlife" aria-labelledby="gypsy-water-wildlife-title">
+        <figure class="gypsy-water-story__image"><img src="gypsy-laut/assets/images/wildlife-manta.jpg" alt="A manta ray swimming through blue water" width="7501" height="5003" loading="lazy" decoding="async"></figure>
+        <div class="gypsy-water-story__copy">
+          <span class="gypsy-water-story__icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M16 10c-2-2-4-2-7 0l-6 3c2 4 5 7 10 8l3-2 3 2c5-1 8-4 10-8l-6-3c-3-2-5-2-7 0zM16 19v9"/></svg></span>
+          <h3 id="gypsy-water-wildlife-title">Wildlife &amp; Water</h3>
+          <p class="gypsy-water-story__lead">Reefs, mantas and some of the most remarkable water around the islands.</p>
+          <p>Head out for snorkelling, reef exploring or a day on the water around Lembongan and Penida. Manta encounters may be possible when conditions allow, while scuba experiences can be arranged through selected premium local dive partners.</p>
+          <p class="gypsy-water-story__note">Seasonal mola experiences are for suitable scuba divers and depend on conditions.</p>
+        </div>
+      </article>
+
+      <article class="gypsy-water-story gypsy-water-story--surf" aria-labelledby="gypsy-water-surf-title">
+        <div class="gypsy-water-story__copy">
+          <span class="gypsy-water-story__icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M16 3c-4.5 4-7 9-7 14s2.5 9 7 12c4.5-3 7-7 7-12S20.5 7 16 3zM16 4v23"/></svg></span>
+          <h3 id="gypsy-water-surf-title">Surf &amp; Paddle</h3>
+          <p class="gypsy-water-story__lead">Chase waves, not schedules.</p>
+          <p>Use the tender to reach nearby breaks, head out with an experienced local surf guide, or grab one of the boards aboard when conditions line up. When the ocean is calmer, paddle boards give you another way to explore around the bay.</p>
+          <p class="gypsy-water-story__closing">Surf when it’s on. Paddle when it’s calm. Come back to your own boat.</p>
+        </div>
+        <figure class="gypsy-water-story__image"><img src="gypsy-laut/assets/images/surf-action.jpg" alt="Surfers riding a blue ocean wave" width="2560" height="1707" loading="lazy" decoding="async"></figure>
+      </article>
+
+      <article class="gypsy-water-story gypsy-water-story--fishing" aria-labelledby="gypsy-water-fishing-title">
+        <div class="gypsy-water-story__duo">
+          <figure class="gypsy-water-story__image gypsy-water-story__image--fishing"><img src="gypsy-laut/assets/images/fishing-action.jpg" alt="A diver holding a large fish underwater" width="1170" height="780" loading="lazy" decoding="async"></figure>
+          <figure class="gypsy-water-story__image gypsy-water-story__image--spearfishing"><img src="gypsy-laut/assets/images/spearfishing-action.jpg" alt="A freediver with a speargun underwater" width="2160" height="3238" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="gypsy-water-story__below">
+          <div class="gypsy-water-story__heading">
+            <span class="gypsy-water-story__icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><circle cx="13" cy="5" r="2"/><path d="M13 7v14a7 7 0 0 0 14 0v-5M24 18l3-2 2 3"/></svg></span>
+            <h3 id="gypsy-water-fishing-title">Fishing &amp; Spearfishing</h3>
+          </div>
+          <div class="gypsy-water-story__copy">
+            <p class="gypsy-water-story__lead">Fish the islands. Make the day your own.</p>
+            <p>From a relaxed fishing run to a more focused sportfishing day, the tender makes it easy to get onto the water. Longer fishing safaris can also form part of a private expedition. Curated spearfishing experiences may be arranged with an external specialist guide.</p>
+            <p class="gypsy-water-story__closing">Catch it. Bring it back aboard. Make it part of dinner.</p>
+            <p class="gypsy-water-story__note">Fishing and spearfishing are subject to permitted areas and conditions.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="gypsy-concierge" id="concierge" aria-labelledby="gypsy-concierge-title">
+    <div class="gypsy-concierge__inner">
+      <div class="gypsy-concierge__intro">
+        <p class="gypsy-concierge__eyebrow">Concierge</p>
+        <h2 id="gypsy-concierge-title">From arrival to anchor.</h2>
+        <p class="gypsy-concierge__lead">From your hotel, villa or airport to life aboard, we can help make the whole journey seamless.</p>
+        <p class="gypsy-concierge__closing">Tell us what you need before you arrive. We’ll help arrange the rest.</p>
+      </div>
+      <dl class="gypsy-concierge__services">
+        <div class="gypsy-concierge__service">
+          <dt>Arrival Transfers</dt>
+          <dd>Airport, hotel, villa and harbour transfers can be arranged around your arrival and departure.</dd>
+        </div>
+        <div class="gypsy-concierge__service">
+          <dt>Tender Transfers</dt>
+          <dd>Move easily between Gypsy Laut, shore and nearby island stops using the tender.</dd>
+        </div>
+        <div class="gypsy-concierge__service">
+          <dt>Tailored Provisioning</dt>
+          <dd>Food, drinks and onboard supplies can be arranged around the way you want to spend your time aboard.</dd>
+        </div>
+        <div class="gypsy-concierge__service">
+          <dt>Private Chef</dt>
+          <dd>A private chef can be arranged for selected stays, meals and occasions.</dd>
+        </div>
+        <div class="gypsy-concierge__service">
+          <dt>Celebrations &amp; Special Requests</dt>
+          <dd>Birthdays, private dinners and other special requests can be discussed before you arrive.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+  <section class="gypsy-expeditions" id="expeditions" aria-labelledby="gypsy-expeditions-title">
+    <div class="gypsy-expeditions__inner">
+      <header class="gypsy-expeditions__intro">
+        <p class="gypsy-expeditions__eyebrow">Private Expeditions</p>
+        <div class="gypsy-expeditions__intro-grid">
+          <h2 id="gypsy-expeditions-title">Go further.</h2>
+          <div class="gypsy-expeditions__intro-copy">
+            <p>When you want more than a day around the islands, Gypsy Laut can take the adventure further. Build a private journey around the places you want to reach, the conditions and the time you have.</p>
+            <p class="gypsy-expeditions__qualification">These are starting points, not fixed routes.</p>
+          </div>
+        </div>
+      </header>
+      <figure class="gypsy-expeditions__chart">
+        <picture>
+          <source media="(max-width: 780px)" srcset="gypsy-laut/assets/maps/expedition-chart-mobile.svg" type="image/svg+xml" width="400" height="840">
+          <img src="gypsy-laut/assets/maps/expedition-chart-desktop.svg" alt="Illustrative regional nautical chart from Gypsy Laut at Mushroom Bay and the three Nusa islands toward Lombok, the northern Gilis, Gili Gede, Desert Point, Sumbawa, Moyo and Komodo" width="1440" height="760" loading="lazy" decoding="async">
+        </picture>
+        <span class="screen-reader-text">Illustrative expedition chart showing Gypsy Laut’s starting point at Mushroom Bay, Nusa Lembongan, beside the separate islands of Nusa Ceningan and Nusa Penida, with possible private expedition areas around Lombok, the northern Gilis, Gili Gede, Desert Point, Sumbawa, Moyo and Komodo. The mobile chart separates western and eastern waters for readable detail. Destinations are inspiration only, not a fixed itinerary, guaranteed access or a navigation chart.</span>
+        <figcaption><span>No fixed route. These are starting points.</span><small>Illustrative expedition chart · not for navigation</small></figcaption>
+      </figure>
+      <div class="gypsy-expeditions__invitation">
+        <h3>Have somewhere else in mind?</h3>
+        <div class="gypsy-expeditions__invitation-copy">
+          <p class="gypsy-expeditions__invitation-lead">Tell us where you want to go.</p>
+          <p>Private expeditions are shaped around season, weather, timing, logistics, regulations and what is realistically possible.</p>
+          <a class="gypsy-expeditions__link" href="#enquire">Plan a Private Expedition <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="gypsy-boat" id="the-boat" aria-labelledby="gypsy-boat-title">
+    <div class="gypsy-boat__inner">
+      <header class="gypsy-boat__intro">
+        <p class="gypsy-boat__eyebrow">Meet Gypsy Laut</p>
+        <div class="gypsy-boat__intro-grid">
+          <h2 id="gypsy-boat-title">More than two decades exploring Indonesian waters.</h2>
+          <p class="gypsy-boat__subline">A new chapter from Lembongan.</p>
+        </div>
+      </header>
+      <figure class="gypsy-boat__portrait">
+        <img src="gypsy-laut/assets/images/gypsy-laut-yacht-exterior.png" alt="Gypsy Laut at anchor, seen in profile from the water" width="1659" height="948" loading="lazy" decoding="async">
+      </figure>
+      <div class="gypsy-boat__story">
+        <p>Gypsy Laut has spent more than two decades exploring Indonesian waters. Today, after a full external and internal refurbishment, she begins a new chapter from Nusa Lembongan — as a private floating home, island base and platform for longer journeys through Indonesia.</p>
+        <p>At 65 feet, she has the space to settle in without losing the character of a real working vessel. Timber interiors, generous deck space, an indoor saloon, air conditioning and modern connectivity make life aboard comfortable, while her range, watermaker and tenders keep the focus firmly on life at sea.</p>
+      </div>
+      <dl class="gypsy-boat__specs" aria-label="Gypsy Laut key specifications">
+        <div class="gypsy-boat__spec"><dt>Length</dt><dd>65 FT</dd></div>
+        <div class="gypsy-boat__spec"><dt>Accommodation</dt><dd>SLEEPS 8</dd></div>
+        <div class="gypsy-boat__spec"><dt>Island access</dt><dd>2 TENDERS</dd></div>
+        <div class="gypsy-boat__spec"><dt>Connectivity</dt><dd>STARLINK</dd></div>
+        <div class="gypsy-boat__spec"><dt>Watermaker</dt><dd>200 L/HR</dd></div>
+        <div class="gypsy-boat__spec"><dt>Capability</dt><dd>LONG-RANGE</dd></div>
+      </dl>
+    </div>
+  </section>
+  <section class="gypsy-gallery" id="gallery" aria-labelledby="gypsy-gallery-title">
+    <div class="gypsy-gallery__inner">
+      <header class="gypsy-gallery__intro">
+        <div>
+          <p class="gypsy-gallery__eyebrow">Life Aboard</p>
+          <h2 id="gypsy-gallery-title">Life aboard Gypsy Laut.</h2>
+        </div>
+        <p class="gypsy-gallery__supporting">A few glimpses of the boat, the spaces and the slower rhythm of life on the water.</p>
+      </header>
+      <div class="gypsy-gallery__sequence">
+        <figure class="gypsy-gallery__figure gypsy-gallery__figure--vessel">
+          <div class="gypsy-gallery__image"><img src="gypsy-laut/assets/images/gypsy-laut-bow-hero-sunset.png" alt="Gypsy Laut's bow and hull at anchor in the evening light" width="1675" height="939" loading="lazy" decoding="async"></div>
+        </figure>
+        <figure class="gypsy-gallery__figure gypsy-gallery__figure--deck">
+          <div class="gypsy-gallery__image"><img src="gypsy-laut/assets/images/gypsy-laut-upper-deck-sunset.png" alt="Cushioned outdoor seating and a small table on Gypsy Laut's upper deck at sunset" width="1683" height="934" loading="lazy" decoding="async"></div>
+        </figure>
+        <figure class="gypsy-gallery__figure gypsy-gallery__figure--saloon">
+          <div class="gypsy-gallery__image"><img src="gypsy-laut/assets/images/gypsy-laut-saloon-lounge.png" alt="L-shaped sofa and television in Gypsy Laut's indoor saloon" width="1688" height="932" loading="lazy" decoding="async"></div>
+        </figure>
+        <figure class="gypsy-gallery__figure gypsy-gallery__figure--berths">
+          <div class="gypsy-gallery__image"><img src="gypsy-laut/assets/images/gypsy-laut-sleeping-berths.png" alt="Timber-lined sleeping berths below deck on Gypsy Laut" width="1765" height="891" loading="lazy" decoding="async"></div>
+        </figure>
+        <figure class="gypsy-gallery__figure gypsy-gallery__figure--water">
+          <div class="gypsy-gallery__image"><img src="gypsy-laut/assets/images/boat-aerial.png" alt="Aerial view of Gypsy Laut and her tender at anchor in open water" width="871" height="589" loading="lazy" decoding="async"></div>
+        </figure>
+        <figure class="gypsy-gallery__figure gypsy-gallery__figure--evening">
+          <div class="gypsy-gallery__image"><img src="gypsy-laut/assets/images/gypsy-laut-bow-sunset.png" alt="View back toward Gypsy Laut's cabin and mast from the bow at sunset" width="1705" height="923" loading="lazy" decoding="async"></div>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section class="gypsy-enquiry" id="enquire" aria-labelledby="gypsy-enquiry-title">
+    <div class="gypsy-enquiry__inner">
+      <div class="gypsy-enquiry__intro">
+        <p class="gypsy-enquiry__eyebrow">Start a Conversation</p>
+        <h2 id="gypsy-enquiry-title">Where do you want to go?</h2>
+        <p class="gypsy-enquiry__lead">Tell us what you have in mind and we’ll help shape the right way to experience Gypsy Laut.</p>
+        <p class="gypsy-enquiry__supporting">Stay aboard in Mushroom Bay, spend the day exploring the islands, or plan a private journey further through Indonesia. Tell us your dates, your group and what sounds good.</p>
+        <div class="gypsy-enquiry__whatsapp">
+          <p class="gypsy-enquiry__whatsapp-heading">Prefer WhatsApp?</p>
+          <p>Send us a message and we can take it from there.</p>
+          <!-- TODO: Replace this non-link CTA with https://wa.me/<confirmed Gypsy Laut number> before launch. Never publish an unverified number. -->
+          <span class="gypsy-enquiry__whatsapp-cta">Message on WhatsApp <span aria-hidden="true">→</span></span>
+          <small>WhatsApp contact details are being confirmed.</small>
+        </div>
+      </div>
+      <div class="gypsy-enquiry__form-wrap">
+        <!-- TODO: Connect this enquiry form to a confirmed Gypsy Laut destination with server-side validation and spam protection. The preview does not transmit enquiries. -->
+        <form class="gypsy-enquiry__form" id="gypsy-enquiry-form" method="post">
+          <div class="gypsy-enquiry__field">
+            <label for="gypsy-enquiry-name">Name <span aria-hidden="true">*</span></label>
+            <input id="gypsy-enquiry-name" name="name" type="text" autocomplete="name" required aria-required="true">
+          </div>
+          <div class="gypsy-enquiry__field">
+            <label for="gypsy-enquiry-email">Email <span aria-hidden="true">*</span></label>
+            <input id="gypsy-enquiry-email" name="email" type="email" autocomplete="email" required aria-required="true">
+          </div>
+          <div class="gypsy-enquiry__field">
+            <label for="gypsy-enquiry-phone">WhatsApp / Phone</label>
+            <input id="gypsy-enquiry-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="gypsy-enquiry__field">
+            <label for="gypsy-enquiry-dates">Preferred dates</label>
+            <input id="gypsy-enquiry-dates" name="preferred_dates" type="text" autocomplete="off">
+          </div>
+          <div class="gypsy-enquiry__field">
+            <label for="gypsy-enquiry-group">Group size</label>
+            <input id="gypsy-enquiry-group" name="group_size" type="text" inputmode="numeric">
+          </div>
+          <div class="gypsy-enquiry__field">
+            <label for="gypsy-enquiry-interest">What are you interested in?</label>
+            <select id="gypsy-enquiry-interest" name="interest">
+              <option value="">Select an experience</option>
+              <option value="stay-aboard">Stay Aboard</option>
+              <option value="private-day-charter">Private Day Charter</option>
+              <option value="wildlife-snorkelling-scuba">Wildlife, Snorkelling &amp; Scuba</option>
+              <option value="surf-paddle">Surf &amp; Paddle</option>
+              <option value="fishing-spearfishing">Fishing &amp; Spearfishing</option>
+              <option value="private-expedition">Private Expedition</option>
+              <option value="something-else">Something Else</option>
+            </select>
+          </div>
+          <div class="gypsy-enquiry__field gypsy-enquiry__field--wide">
+            <label for="gypsy-enquiry-message">Tell us what you have in mind</label>
+            <textarea id="gypsy-enquiry-message" name="message" rows="5"></textarea>
+          </div>
+          <div class="gypsy-enquiry__actions">
+            <button class="gypsy-enquiry__submit" type="submit" disabled>Send Enquiry <span aria-hidden="true">→</span></button>
+            <p class="gypsy-enquiry__preview-note">Preview only — enquiry sending is not connected yet.</p>
+            <p class="gypsy-enquiry__status" id="gypsy-enquiry-status" role="status" aria-live="polite" hidden>Online enquiries are not connected in this preview. No message has been sent.</p>
+          </div>
+        </form>
+        <p class="gypsy-enquiry__closing">Not sure yet? That’s fine too. Start with a message.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  <script>
+(() => {
+  const button = document.querySelector(".gypsy-menu-button");
+  const menu = document.querySelector("#gypsy-main-nav");
+  if (!button || !menu) return;
+
+  const setOpen = (open) => {
+    button.setAttribute("aria-expanded", String(open));
+    menu.classList.toggle("is-open", open);
+  };
+
+  button.addEventListener("click", () => {
+    setOpen(button.getAttribute("aria-expanded") !== "true");
+  });
+  menu.addEventListener("click", (event) => {
+    if (event.target.closest("a")) setOpen(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setOpen(false);
+  });
+
+  // Section IDs are resolved on each update, so later homepage sections can
+  // use the existing menu links without changing this navigation script.
+  const sectionLinks = Array.from(menu.querySelectorAll('a[href^="#"]'));
+  let updateQueued = false;
+
+  const updateCurrentSection = () => {
+    updateQueued = false;
+    const activationLine = window.innerHeight * 0.32;
+    let currentLink = null;
+    let nearestTop = -Infinity;
+
+    for (const link of sectionLinks) {
+      const section = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+      if (!section || !section.getClientRects().length) continue;
+      const top = section.getBoundingClientRect().top;
+      if (top <= activationLine && top > nearestTop) {
+        nearestTop = top;
+        currentLink = link;
+      }
+    }
+
+    for (const link of sectionLinks) {
+      if (link === currentLink) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    }
+  };
+
+  const queueCurrentSectionUpdate = () => {
+    if (updateQueued) return;
+    updateQueued = true;
+    window.requestAnimationFrame(updateCurrentSection);
+  };
+
+  window.addEventListener("scroll", queueCurrentSectionUpdate, { passive: true });
+  window.addEventListener("resize", queueCurrentSectionUpdate);
+  window.addEventListener("hashchange", queueCurrentSectionUpdate);
+  queueCurrentSectionUpdate();
+})();
+
+  </script>
+  <script>
+(() => {
+  const form = document.getElementById("gypsy-enquiry-form");
+  const status = document.getElementById("gypsy-enquiry-status");
+  const submit = form?.querySelector('button[type="submit"]');
+  if (!form || !status || !submit) return;
+
+  // TODO: Replace this preview-only guard only after a confirmed Gypsy Laut
+  // enquiry destination, server-side validation and spam protection exist.
+  // Keeping the button disabled in HTML prevents accidental POSTs without JS.
+  submit.disabled = false;
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    status.hidden = false;
+  });
+})();
+
+  </script>
+</body>
+</html>

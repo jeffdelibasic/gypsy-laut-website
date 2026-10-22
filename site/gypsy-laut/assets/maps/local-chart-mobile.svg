@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 720" role="img" aria-labelledby="title desc">
+  <title id="title">The islands around Mushroom Bay</title>
+  <desc id="desc">Simplified illustrative chart for small screens. Gypsy Laut at Mushroom Bay is the base; surf breaks, reef stops and separate Manta Bay and Manta Point areas appear around Lembongan, Ceningan and Penida. Not for navigation or activity planning.</desc>
+  <defs>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#8aaeb2" stroke-opacity=".12" stroke-width="1"/></pattern>
+    <g id="mobile-anchor" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="5" r="2"/><path d="M16 7v20M10 12h12M5 19c0 5 4.5 9 11 9s11-4 11-9M5 19l3 2M27 19l-3 2"/></g>
+    <g id="mobile-surf" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3c-4.5 4-7 9-7 14s2.5 9 7 12c4.5-3 7-7 7-12S20.5 7 16 3zM16 4v23"/></g>
+    <g id="mobile-manta" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10c-2-2-4-2-7 0l-6 3c2 4 5 7 10 8l3-2 3 2c5-1 8-4 10-8l-6-3c-3-2-5-2-7 0zM16 19v9"/></g>
+    <g id="mobile-mask" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12c4-3 18-3 22 0l-2 9c-3 2-6 2-9-1-3 3-6 3-9 1zM27 14h3V7"/></g>
+  </defs>
+  <rect width="560" height="720" fill="#0c3046"/>
+  <rect width="560" height="720" fill="url(#grid)"/>
+  <g fill="none" stroke="#8aaeb2" stroke-width="1" stroke-opacity=".23">
+    <path d="M42 90c64-45 190-51 266-8 49 28 69 77 64 136"/>
+    <path d="M20 70c87-66 226-69 314-18 63 37 94 104 87 177"/>
+    <path d="M230 391c78-78 231-94 329-48"/>
+    <path d="M203 663c90 43 249 37 355-18"/>
+  </g>
+  <g fill="#ece4d5" stroke="#d8c6a8" stroke-width="1.7" stroke-linejoin="round">
+    <path d="M158 111c42-5 77 11 97 43l3 28-12 22 8 27-21 29-20 11-14 21-34-1-15-17-26 2-20-21-18 7-13-23 8-19-10-19 11-34-3-24 21-20 10-26 38-6z"/>
+    <path d="M260 319l29 8 24 19 5 24-17 19-8 22-25 9-24-14-13-27 8-28z"/>
+    <path d="M307 421l34-22 48-10 47 3 46-8 50 21 17 34-4 38-23 34-25 15-27 32-49 18-50-3-42 14-45-18-35-1-34-24-11-26 7-26-9-19z"/>
+  </g>
+  <g fill="none" stroke="#d8c6a8" stroke-width="1.1" stroke-opacity=".42" stroke-dasharray="3 8">
+    <path d="M154 304Q172 322 196 332"/>
+    <path d="M154 304Q205 315 231 348"/>
+  </g>
+  <g id="chart-leaders" fill="none" stroke="#9dbbb8" stroke-opacity=".84" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M249 179h43"/>
+    <path d="M183 455l24-24 58-42"/>
+    <path d="M155 512l23-20 22-37"/>
+    <path d="M145 574l26-30 4-29"/>
+    <path d="M342 386l-22 4"/>
+    <path d="M365 628l7-20"/>
+  </g>
+  <g id="chart-endpoints" fill="#e8dfcf" stroke="#0c3046" stroke-width="1.1">
+    <circle cx="292" cy="179" r="3"/><circle cx="265" cy="389" r="3"/>
+    <circle cx="200" cy="455" r="3"/><circle cx="175" cy="515" r="3"/>
+    <circle cx="320" cy="390" r="3"/><circle cx="372" cy="608" r="3"/>
+  </g>
+  <g color="#e8dfcf" opacity=".9">
+    <use href="#mobile-surf" transform="translate(28 370) scale(.56)"/>
+    <use href="#mobile-surf" transform="translate(28 496) scale(.56)"/>
+    <use href="#mobile-mask" transform="translate(297 166) scale(.56)"/>
+    <use href="#mobile-mask" transform="translate(299 292) scale(.56)"/>
+    <use href="#mobile-mask" transform="translate(390 327) scale(.56)"/>
+    <use href="#mobile-mask" transform="translate(318 364) scale(.56)"/>
+    <use href="#mobile-manta" transform="translate(27 559) scale(.56)"/>
+    <use href="#mobile-manta" transform="translate(290 623) scale(.56)"/>
+  </g>
+  <g fill="none" stroke="#e8dfcf" stroke-width="1.4"><circle cx="154" cy="304" r="14" stroke-opacity=".6"/></g>
+  <g color="#f3eadd"><use href="#mobile-anchor" transform="translate(145 295) scale(.56)"/></g>
+  <g transform="translate(487 78)" fill="none" stroke="#d8c6a8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle r="27" stroke-opacity=".6"/><path d="M0 14V-14m0 0-5 7m5-7 5 7"/>
+  </g>
+  <g font-family="DM Sans, Segoe UI, sans-serif">
+    <g fill="#173249" text-anchor="middle" letter-spacing="1.3">
+      <text x="173" y="196" font-size="21">NUSA</text><text x="173" y="223" font-size="21">LEMBONGAN</text>
+      <text x="421" y="505" font-size="23">NUSA PENIDA</text>
+    </g>
+    <g fill="#e8dfcf">
+      <text x="28" y="327" font-size="11" letter-spacing="2.2">GYPSY LAUT</text>
+      <text x="28" y="350" font-size="21">Mushroom Bay</text>
+      <text x="54" y="383" font-size="14">Shipwrecks · Razors</text>
+      <text x="54" y="403" font-size="14">Lacerations · Playgrounds</text>
+      <text x="54" y="423" font-size="14">Tamarind</text>
+      <text x="323" y="184" font-size="16">Mangrove Point</text>
+      <text x="325" y="310" font-size="16">Gamat Bay</text>
+      <text x="417" y="345" font-size="16">Toyapakeh</text>
+      <text x="345" y="382" font-size="18">Crystal Bay</text>
+      <text x="28" y="470" font-size="20">Nusa Ceningan</text>
+      <text x="55" y="513" font-size="15">Mahana Point</text>
+      <text x="54" y="580" font-size="17">Manta Bay</text>
+      <text x="318" y="642" font-size="17">Manta Point</text>
+    </g>
+    <text x="487" y="40" fill="#d8c6a8" text-anchor="middle" font-size="18">N</text>
+  </g>
+</svg>

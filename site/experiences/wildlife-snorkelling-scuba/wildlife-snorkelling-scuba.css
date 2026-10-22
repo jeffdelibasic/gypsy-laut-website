@@ -1,0 +1,163 @@
+/* Milestone 10C only. The approved shared design system and other detail pages are unchanged. */
+.wildlife-skip { position: fixed; z-index: 100; top: .75rem; left: .75rem; padding: .7rem 1rem; transform: translateY(-150%); background: var(--gypsy-cream); color: var(--gypsy-ocean); font-size: .85rem; text-decoration: none; }
+.wildlife-skip:focus { transform: translateY(0); outline: 2px solid var(--gypsy-aqua); outline-offset: 2px; }
+.wildlife-inner { width: 100%; max-width: 1440px; margin: 0 auto; }
+.wildlife-section { padding: clamp(7rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem); background: var(--gypsy-cream); color: var(--gypsy-ink); }
+.wildlife-section--dark { background: var(--gypsy-ocean); color: var(--gypsy-cream); }
+.wildlife-section h2 { margin: 0; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(4.1rem, 6.9vw, 7rem); font-weight: 400; letter-spacing: -.04em; line-height: 1.02; text-wrap: balance; }
+.wildlife-section--dark h2 { color: var(--gypsy-cream); }
+.wildlife-section h3 { margin: 0; font-family: var(--gypsy-display); font-weight: 400; letter-spacing: -.025em; line-height: 1.06; }
+.wildlife-section p { overflow-wrap: break-word; }
+.wildlife-eyebrow { display: flex; align-items: flex-start; gap: .9rem; margin: 0 0 clamp(1.9rem, 3vw, 2.8rem); color: var(--gypsy-ocean); font-size: .75rem; font-weight: 500; letter-spacing: .17em; line-height: 1.5; text-transform: uppercase; }
+.wildlife-eyebrow::before { width: 2.75rem; height: 1px; flex: 0 0 auto; margin-top: .7em; background: currentColor; content: ""; }
+.wildlife-eyebrow--light { color: rgba(245,240,231,.75); }
+.wildlife-frame { --wildlife-frame-gap: clamp(8px, .8vw, 12px); position: relative; width: 100%; margin: 0; align-self: start; outline: 1px solid rgba(12,48,70,.36); outline-offset: var(--wildlife-frame-gap); }
+.wildlife-frame--light { outline-color: rgba(245,240,231,.36); }
+.wildlife-frame__image { position: relative; width: 100%; aspect-ratio: 1.4; overflow: hidden; background: var(--gypsy-ocean); }
+.wildlife-frame__image img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.wildlife-page .gypsy-button:focus-visible { outline: 2px solid var(--gypsy-sand); outline-offset: 4px; }
+
+.wildlife-hero { position: relative; isolation: isolate; display: flex; align-items: end; min-height: min(960px, 100svh); overflow: hidden; background: var(--gypsy-ocean); color: var(--gypsy-cream); }
+.wildlife-hero__media { position: absolute; z-index: 0; inset: 0; margin: 0; }
+.wildlife-hero__media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 54% center; }
+.wildlife-hero__media::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4,22,39,.91) 0%, rgba(4,22,39,.79) 29%, rgba(4,22,39,.4) 57%, rgba(4,22,39,.1) 100%), linear-gradient(to bottom, rgba(4,22,39,.5) 0%, transparent 30%, transparent 68%, rgba(4,22,39,.34) 100%); content: ""; pointer-events: none; }
+.wildlife-hero__inner { position: relative; z-index: 1; width: 100%; max-width: 1440px; margin: 0 auto; padding: clamp(11rem, 15vw, 15rem) clamp(1.25rem, 5vw, 5rem) clamp(7rem, 10vw, 10rem); }
+.wildlife-hero__copy { max-width: 45rem; }
+.wildlife-hero h1 { max-width: 9ch; margin: 0; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(5.3rem, 8.2vw, 9rem); font-weight: 400; letter-spacing: -.045em; line-height: .95; text-wrap: balance; }
+.wildlife-hero__intro { max-width: 35rem; margin: clamp(2rem, 3vw, 3rem) 0 2.25rem; }
+.wildlife-hero__intro p { margin: 0 0 .9rem; color: rgba(245,240,231,.94); font-size: clamp(1.07rem, 1.4vw, 1.24rem); line-height: 1.6; }
+.wildlife-hero__intro p:last-child { max-width: 30rem; margin-bottom: 0; color: rgba(245,240,231,.79); font-size: clamp(.98rem, 1.18vw, 1.08rem); }
+.wildlife-hero .gypsy-button { gap: 1.5rem; }
+.wildlife-hero__location { position: absolute; z-index: 1; right: clamp(1.25rem, 5vw, 5rem); bottom: 1.5rem; margin: 0; color: rgba(245,240,231,.82); font-size: .68rem; letter-spacing: .17em; text-shadow: 0 1px 8px rgba(4,22,39,.5); text-transform: uppercase; }
+
+.wildlife-base__grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); align-items: center; gap: clamp(4rem, 8vw, 9rem); }
+.wildlife-base__photo .wildlife-frame__image { aspect-ratio: 1.06; }
+.wildlife-base__photo img { object-position: 54% center; }
+.wildlife-base__copy { max-width: 38rem; }
+.wildlife-base h2 { max-width: 11ch; margin-bottom: 2.5rem; }
+.wildlife-base__copy p:not(.wildlife-eyebrow) { margin: 0 0 1.3rem; font-size: clamp(1.04rem, 1.28vw, 1.18rem); line-height: 1.7; }
+.wildlife-base__copy .wildlife-base__closing { max-width: 29rem; margin-top: 2.2rem; padding-top: 1.4rem; border-top: 1px solid var(--gypsy-rule); color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.7rem, 2.3vw, 2.35rem); font-style: italic; line-height: 1.17; }
+
+.wildlife-below { border-top: 1px solid var(--gypsy-rule); }
+.wildlife-below > .wildlife-inner { display: flow-root; }
+.wildlife-below__intro { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); margin-bottom: clamp(5rem, 9vw, 9rem); }
+.wildlife-below h2 { max-width: 11ch; }
+.wildlife-below__lead { max-width: 32rem; margin: 0 0 .45rem; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(2rem, 2.7vw, 2.85rem); font-style: italic; line-height: 1.18; }
+.wildlife-below__composition { display: grid; grid-template-columns: minmax(0, .87fr) minmax(0, 1.13fr); align-items: start; gap: clamp(3rem, 6vw, 6rem); }
+.wildlife-below__swim .wildlife-frame__image { aspect-ratio: .7; }
+.wildlife-below__swim img { object-position: center 48%; }
+.wildlife-below__right { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+.wildlife-below__moments { width: 100%; max-width: 35rem; }
+.wildlife-moment { display: grid; grid-template-columns: minmax(7rem, .32fr) minmax(0, .68fr); gap: clamp(1rem, 3vw, 3rem); padding: clamp(1.45rem, 2.5vw, 2.5rem) 0; border-top: 1px solid var(--gypsy-rule); }
+.wildlife-moment:last-child { border-bottom: 1px solid var(--gypsy-rule); }
+.wildlife-moment h3 { color: var(--gypsy-ocean); font-size: clamp(2.3rem, 3vw, 3.2rem); }
+.wildlife-moment p { margin: .15rem 0 0; color: rgba(16,32,51,.79); font-size: clamp(.98rem, 1.15vw, 1.08rem); line-height: 1.65; }
+.wildlife-below__reef { width: 100%; margin: clamp(2.5rem, 4vw, 4rem) 0 0; }
+.wildlife-below__reef .wildlife-frame__image { aspect-ratio: 1.57; }
+.wildlife-below__reef img { object-position: center 52%; }
+
+.wildlife-encounter__layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(3rem, 7vw, 8rem); }
+.wildlife-encounter__story { max-width: 37rem; }
+.wildlife-encounter h2 { max-width: 12ch; }
+.wildlife-encounter__copy { max-width: 35rem; margin-top: clamp(2rem, 3vw, 3rem); }
+.wildlife-encounter__copy p { margin: 0 0 1.3rem; color: rgba(245,240,231,.83); font-size: clamp(1.05rem, 1.28vw, 1.2rem); line-height: 1.7; }
+.wildlife-encounter__copy .wildlife-encounter__closing { margin-top: 2.5rem; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(2rem, 2.6vw, 2.7rem); font-style: italic; line-height: 1.17; }
+.wildlife-encounter__photo .wildlife-frame__image { aspect-ratio: 1.28; }
+.wildlife-encounter__photo img { object-position: 47% center; }
+
+.wildlife-scuba__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "heading copy" "photo copy"; align-items: start; gap: clamp(2.75rem, 5vw, 5rem) clamp(4rem, 8vw, 9rem); }
+.wildlife-scuba__heading { grid-area: heading; }
+.wildlife-scuba h2 { max-width: 14ch; }
+.wildlife-scuba__copy { grid-area: copy; max-width: 35rem; padding-top: clamp(3rem, 6vw, 6rem); }
+.wildlife-scuba__copy p { margin: 0 0 1.35rem; font-size: clamp(1.04rem, 1.26vw, 1.17rem); line-height: 1.7; }
+.wildlife-scuba__copy .wildlife-scuba__lead { color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(2rem, 2.5vw, 2.6rem); font-style: italic; line-height: 1.2; }
+.wildlife-scuba__copy .wildlife-scuba__note { margin-top: 2.5rem; padding-top: 1.4rem; border-top: 1px solid var(--gypsy-rule); color: rgba(16,32,51,.68); font-size: .9rem; line-height: 1.6; }
+.wildlife-scuba__photo { grid-area: photo; max-width: 37rem; }
+.wildlife-scuba__photo .wildlife-frame__image { aspect-ratio: 1.52; }
+.wildlife-scuba__photo img { object-position: center center; }
+
+.wildlife-day { border-top: 1px solid var(--gypsy-rule); }
+.wildlife-day__intro { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); }
+.wildlife-day h2 { max-width: 12ch; }
+.wildlife-day__copy { max-width: 33rem; }
+.wildlife-day__copy p { margin: 0 0 1.25rem; font-size: clamp(1.05rem, 1.3vw, 1.2rem); line-height: 1.68; }
+.wildlife-day__copy p:last-child { margin-bottom: 0; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.75rem, 2.2vw, 2.2rem); font-style: italic; line-height: 1.2; }
+.wildlife-day .wildlife-day__ledger { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(2.5rem, 5vw, 5rem); margin-top: clamp(5rem, 9vw, 8rem); }
+.wildlife-day__ledger .gypsy-boat__spec { border-top-color: var(--gypsy-rule); }
+.wildlife-day__ledger .gypsy-boat__spec dd { color: var(--gypsy-ocean); font-size: clamp(1.8rem, 2.45vw, 2.6rem); white-space: normal; }
+.wildlife-day__ledger .gypsy-boat__spec dt { color: rgba(16,32,51,.69); }
+
+.wildlife-return { border-top: 1px solid var(--gypsy-rule); }
+.wildlife-return__intro { display: grid; grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); margin-bottom: clamp(4.5rem, 8vw, 8rem); }
+.wildlife-return h2 { max-width: 12ch; }
+.wildlife-return__copy { max-width: 35rem; }
+.wildlife-return__copy p { margin: 0 0 1.25rem; font-size: clamp(1.05rem, 1.29vw, 1.2rem); line-height: 1.7; }
+.wildlife-return__copy p:first-child { color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.9rem, 2.4vw, 2.55rem); font-style: italic; line-height: 1.2; }
+.wildlife-return__copy p:last-child { margin-bottom: 0; }
+.wildlife-return__photo .wildlife-frame__image { aspect-ratio: 1.84; }
+.wildlife-return__photo img { object-position: center 56%; }
+.wildlife-close { padding: clamp(6.5rem, 10vw, 9rem) clamp(1.25rem, 5vw, 5rem); color: var(--gypsy-cream); background: var(--gypsy-ocean); }
+.wildlife-close__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); }
+.wildlife-close h2 { max-width: 11ch; margin: 0; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(4rem, 6vw, 6.5rem); font-weight: 400; letter-spacing: -.04em; line-height: 1.04; text-wrap: balance; }
+.wildlife-close__action { max-width: 34rem; }
+.wildlife-close__action p { margin: 0 0 2.5rem; color: rgba(245,240,231,.82); font-size: clamp(1.04rem, 1.3vw, 1.2rem); line-height: 1.72; }
+.wildlife-close .gypsy-button { color: var(--gypsy-cream); }
+.wildlife-close .gypsy-button:hover, .wildlife-close .gypsy-button:focus-visible { color: var(--gypsy-ocean); background: var(--gypsy-cream); }
+
+@media (max-width: 1100px) {
+  .wildlife-page .gypsy-menu-button { display: block; }
+  .wildlife-page .gypsy-nav { display: none; position: absolute; top: 100%; right: 1.25rem; left: 1.25rem; padding: 1.25rem; background: var(--gypsy-navy); flex-direction: column; align-items: stretch; gap: .4rem; }
+  .wildlife-page .gypsy-nav.is-open { display: flex; }
+  .wildlife-base__grid, .wildlife-below__composition { gap: clamp(3rem, 6vw, 5rem); }
+  .wildlife-scuba__grid { column-gap: clamp(3rem, 6vw, 5rem); }
+}
+@media (max-width: 900px) {
+  .wildlife-base__grid, .wildlife-below__intro, .wildlife-below__composition, .wildlife-encounter__layout, .wildlife-scuba__grid, .wildlife-day__intro, .wildlife-return__intro, .wildlife-close__grid { grid-template-columns: 1fr; }
+  .wildlife-close__grid { gap: 3rem; }
+  .wildlife-base__photo { max-width: 44rem; }
+  .wildlife-base__copy { grid-row: 1; max-width: 41rem; }
+  .wildlife-below__lead { max-width: 39rem; }
+  .wildlife-below__swim { max-width: 44rem; }
+  .wildlife-below__swim .wildlife-frame__image { aspect-ratio: .85; }
+  .wildlife-below__right { width: 100%; }
+  .wildlife-below__moments { max-width: 44rem; }
+  .wildlife-below__reef { max-width: 44rem; margin: 3rem 0 0; }
+  .wildlife-encounter__story { max-width: 44rem; }
+  .wildlife-encounter__photo { max-width: 44rem; }
+  .wildlife-scuba__grid { grid-template-areas: "heading" "copy" "photo"; }
+  .wildlife-scuba__copy { max-width: 42rem; padding-top: 0; }
+  .wildlife-scuba__photo { max-width: 44rem; }
+  .wildlife-day .wildlife-day__ledger { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  .wildlife-hero { display: flex; flex-direction: column; align-items: stretch; min-height: 0; }
+  .wildlife-hero__inner { order: 1; padding: 10.5rem 1.25rem 4.5rem; }
+  .wildlife-hero__media { position: relative; order: 2; inset: auto; width: 100%; aspect-ratio: 1.48; }
+  .wildlife-hero__media::after { display: none; }
+  .wildlife-hero__media img { object-position: 58% center; }
+  .wildlife-hero__location { right: 1.25rem; bottom: 1rem; padding: .35rem .5rem; background: rgba(12,48,70,.68); font-size: .6rem; }
+}
+@media (max-width: 640px) {
+  .wildlife-section { padding: 6rem 1.25rem; }
+  .wildlife-section h2 { font-size: clamp(3.55rem, 11.7vw, 5.15rem); }
+  .wildlife-hero h1 { font-size: clamp(4.35rem, 13.7vw, 6rem); }
+  .wildlife-hero__media { aspect-ratio: 1.14; }
+  .wildlife-below__intro, .wildlife-return__intro { margin-bottom: 4rem; }
+  .wildlife-below__swim .wildlife-frame__image { aspect-ratio: .9; }
+  .wildlife-moment { grid-template-columns: 1fr; gap: .35rem; }
+  .wildlife-below__reef { margin-top: 2.75rem; }
+  .wildlife-encounter__photo .wildlife-frame__image { aspect-ratio: 1.16; }
+  .wildlife-scuba__photo .wildlife-frame__image { aspect-ratio: 1.36; }
+  .wildlife-day .wildlife-day__ledger { gap: 2.5rem 1.25rem; margin-top: 5rem; }
+  .wildlife-day__ledger .gypsy-boat__spec dd { font-size: clamp(1.55rem, 5.6vw, 2rem); }
+  .wildlife-return__photo .wildlife-frame__image { aspect-ratio: 1.26; }
+  .wildlife-close { padding: 6rem 1.25rem; }
+  .wildlife-close h2 { font-size: clamp(3.4rem, 11.2vw, 5rem); }
+}
+@media (max-width: 430px) {
+  .wildlife-hero h1 { font-size: clamp(4rem, 13vw, 4.75rem); }
+  .wildlife-day .wildlife-day__ledger { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wildlife-skip { transition: none; }
+}

@@ -1,0 +1,164 @@
+/* M10F only. Shared styles and all approved pages remain unchanged. */
+.expedition-skip { position: fixed; z-index: 100; top: .75rem; left: .75rem; padding: .7rem 1rem; transform: translateY(-150%); background: var(--gypsy-cream); color: var(--gypsy-ocean); font-size: .85rem; text-decoration: none; }
+.expedition-skip:focus { transform: translateY(0); outline: 2px solid var(--gypsy-aqua); outline-offset: 2px; }
+.expedition-inner { width: 100%; max-width: 1440px; margin: 0 auto; }
+.expedition-section { padding: clamp(7rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem); color: var(--gypsy-ink); background: var(--gypsy-cream); }
+.expedition-section--dark { color: var(--gypsy-cream); background: var(--gypsy-ocean); }
+.expedition-section h2, .expedition-komodo h2, .expedition-close h2 { margin: 0; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(4.1rem, 6.8vw, 7rem); font-weight: 400; letter-spacing: -.04em; line-height: 1.04; text-wrap: balance; }
+.expedition-section--dark h2, .expedition-close h2 { color: var(--gypsy-cream); }
+.expedition-section p, .expedition-close p { overflow-wrap: break-word; }
+.expedition-eyebrow { display: flex; align-items: flex-start; gap: .9rem; margin: 0 0 clamp(1.9rem, 3vw, 2.8rem); color: var(--gypsy-ocean); font-size: .75rem; font-weight: 500; letter-spacing: .17em; line-height: 1.5; text-transform: uppercase; }
+.expedition-eyebrow::before { width: 2.75rem; height: 1px; flex: 0 0 auto; margin-top: .7em; background: currentColor; content: ""; }
+.expedition-eyebrow--light { color: rgba(245,240,231,.78); }
+.expedition-frame { --expedition-frame-gap: clamp(8px, .8vw, 12px); position: relative; width: 100%; margin: 0; align-self: start; outline: 1px solid rgba(12,48,70,.36); outline-offset: var(--expedition-frame-gap); }
+.expedition-frame--light { outline-color: rgba(245,240,231,.36); }
+.expedition-frame__image { position: relative; width: 100%; aspect-ratio: 1.4; overflow: hidden; background: var(--gypsy-ocean); }
+.expedition-frame__image img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.expedition-page .gypsy-button:focus-visible { outline: 2px solid var(--gypsy-sand); outline-offset: 4px; }
+
+.expedition-hero { position: relative; isolation: isolate; display: flex; align-items: end; min-height: min(990px, 100svh); color: var(--gypsy-cream); background: var(--gypsy-ocean); overflow: hidden; }
+.expedition-hero__image, .expedition-hero__veil { position: absolute; inset: 0; }
+.expedition-hero__image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
+.expedition-hero__veil { background: linear-gradient(90deg, rgba(3,20,34,.88) 0%, rgba(3,20,34,.72) 29%, rgba(3,20,34,.18) 68%, rgba(3,20,34,.08) 100%), linear-gradient(0deg, rgba(3,20,34,.35), transparent 45%), linear-gradient(180deg, rgba(3,20,34,.35), transparent 20%); pointer-events: none; }
+.expedition-hero__inner { position: relative; z-index: 1; display: flex; min-height: inherit; flex-direction: column; justify-content: flex-end; padding: clamp(12rem, 17vw, 18rem) clamp(1.25rem, 5vw, 5rem) clamp(4.2rem, 7vw, 7rem); }
+.expedition-hero__copy { max-width: 41rem; }
+.expedition-hero h1 { margin: 0; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(6.5rem, 11vw, 11.5rem); font-weight: 400; letter-spacing: -.048em; line-height: .9; }
+.expedition-hero__lead { max-width: 38rem; margin: clamp(2.2rem, 4vw, 4rem) 0 1rem; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(2rem, 2.9vw, 3rem); font-style: italic; line-height: 1.13; }
+.expedition-hero__support { max-width: 33rem; margin: 0 0 2.25rem; color: rgba(245,240,231,.86); font-size: clamp(1.04rem, 1.25vw, 1.18rem); line-height: 1.7; }
+.expedition-hero__location { align-self: flex-end; margin: clamp(2rem, 4vw, 4rem) 0 0; color: rgba(245,240,231,.82); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; }
+
+.expedition-route__grid { display: grid; grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr); align-items: center; gap: clamp(4rem, 8vw, 9rem); }
+.expedition-route__copy { max-width: 38rem; }
+.expedition-route h2 { max-width: 10ch; }
+.expedition-route__display { margin: 1.1rem 0 clamp(2.25rem, 4vw, 4rem); color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(2rem, 2.7vw, 2.75rem); font-style: italic; line-height: 1.16; }
+.expedition-route__copy p:not(.expedition-eyebrow, .expedition-route__display) { margin: 0 0 1.3rem; font-size: clamp(1.04rem, 1.28vw, 1.18rem); line-height: 1.72; }
+.expedition-route__photo .expedition-frame__image { aspect-ratio: 1.2; }
+.expedition-route__photo img { object-position: 52% center; }
+
+.expedition-map { border-top: 1px solid var(--gypsy-rule); }
+.expedition-map__intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); margin-bottom: clamp(4.5rem, 8vw, 7rem); }
+.expedition-map h2 { max-width: 12ch; }
+.expedition-map__copy { max-width: 35rem; }
+.expedition-map__copy p { margin: 0 0 1.15rem; font-size: clamp(1.05rem, 1.3vw, 1.2rem); line-height: 1.7; }
+.expedition-map__copy .expedition-map__lead { color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(2rem, 2.6vw, 2.7rem); font-style: italic; line-height: 1.18; }
+.expedition-map__chart { margin: 0; }
+.expedition-map__chart picture { display: block; outline: 1px solid rgba(12,48,70,.36); outline-offset: clamp(8px, .8vw, 12px); }
+.expedition-map__chart img { display: block; width: 100%; height: auto; background: var(--gypsy-ocean); }
+.expedition-map__chart figcaption { margin-top: 1.7rem; color: rgba(16,32,51,.65); font-size: .7rem; letter-spacing: .15em; line-height: 1.5; text-transform: uppercase; }
+
+.expedition-west { padding-bottom: clamp(7rem, 11vw, 10rem); }
+.expedition-west__intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); margin-bottom: clamp(4.5rem, 8vw, 7rem); }
+.expedition-west h2 { max-width: 12ch; }
+.expedition-west__copy { max-width: 35rem; }
+.expedition-west__copy p { margin: 0 0 1.25rem; font-size: clamp(1.04rem, 1.28vw, 1.18rem); line-height: 1.72; }
+.expedition-west__copy p:last-child { margin-bottom: 0; }
+.expedition-west__panorama { width: calc(100% + clamp(2.5rem, 10vw, 10rem)); max-width: none; margin: 0 0 clamp(4rem, 7vw, 7rem) calc(0px - clamp(1.25rem, 5vw, 5rem)); aspect-ratio: 3.6; overflow: hidden; background: var(--gypsy-ocean); }
+.expedition-west__panorama img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+.expedition-west__pair { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .65fr); align-items: start; gap: clamp(3rem, 7vw, 8rem); }
+.expedition-west__coast .expedition-frame__image { aspect-ratio: 1.6; }
+.expedition-west__coast img { object-position: center 58%; }
+.expedition-west__quiet { margin-top: clamp(4rem, 9vw, 10rem); }
+.expedition-west__quiet .expedition-frame__image { aspect-ratio: .97; }
+.expedition-west__quiet img { object-position: 55% 50%; }
+
+.expedition-east__intro { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); margin-bottom: clamp(4.5rem, 8vw, 7rem); }
+.expedition-east h2 { max-width: 11ch; }
+.expedition-east__copy { max-width: 36rem; }
+.expedition-east__copy p { margin: 0 0 1.25rem; color: rgba(245,240,231,.83); font-size: clamp(1.04rem, 1.28vw, 1.18rem); line-height: 1.72; }
+.expedition-east__copy p:last-child { margin-bottom: 0; }
+.expedition-east__images { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, .45fr); align-items: start; gap: clamp(3rem, 7vw, 8rem); }
+.expedition-east__coast { margin: 0; aspect-ratio: 1.48; overflow: hidden; background: var(--gypsy-navy); }
+.expedition-east__coast img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 53%; }
+.expedition-east__evening { margin-top: clamp(4rem, 8vw, 9rem); }
+.expedition-east__evening .expedition-frame__image { aspect-ratio: .86; }
+.expedition-east__evening img { object-position: center 56%; }
+
+.expedition-komodo { color: var(--gypsy-ink); background: var(--gypsy-cream); }
+.expedition-komodo__intro { padding: clamp(7rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem) clamp(4.5rem, 8vw, 7rem); }
+.expedition-komodo__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); }
+.expedition-komodo h2 { max-width: 9ch; }
+.expedition-komodo__grid > p { max-width: 35rem; margin: 0; font-size: clamp(1.05rem, 1.32vw, 1.22rem); line-height: 1.72; }
+.expedition-komodo__landscape { margin: 0; aspect-ratio: 2.15; overflow: hidden; background: var(--gypsy-ocean); }
+.expedition-komodo__landscape img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 54%; }
+
+.expedition-life__grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); align-items: center; gap: clamp(4rem, 8vw, 9rem); }
+.expedition-life__copy { max-width: 39rem; }
+.expedition-life h2 { max-width: 13ch; margin-bottom: 2.25rem; }
+.expedition-life__copy p:not(.expedition-eyebrow) { margin: 0 0 1.3rem; font-size: clamp(1.04rem, 1.28vw, 1.18rem); line-height: 1.72; }
+.expedition-life__copy .expedition-life__detail { margin-top: 2.3rem; padding-top: 1.35rem; border-top: 1px solid var(--gypsy-rule); color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.8rem, 2.3vw, 2.4rem); font-style: italic; line-height: 1.2; }
+.expedition-life__photo .expedition-frame__image { aspect-ratio: 1.15; }
+.expedition-life__photo img { object-position: center 54%; }
+
+.expedition-ledger h2 { max-width: 11ch; }
+.expedition-ledger__list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(2.5rem, 5vw, 5rem); margin-top: clamp(5rem, 8vw, 8rem); }
+.expedition-ledger__list .gypsy-boat__spec { border-top-color: rgba(245,240,231,.27); }
+.expedition-ledger__list .gypsy-boat__spec dd { color: var(--gypsy-cream); font-size: clamp(1.65rem, 2.3vw, 2.45rem); white-space: normal; }
+.expedition-ledger__list .gypsy-boat__spec dt { color: rgba(245,240,231,.66); }
+
+.expedition-reality__grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); align-items: end; gap: clamp(4rem, 9vw, 10rem); }
+.expedition-reality h2 { max-width: 11ch; }
+.expedition-reality__copy { max-width: 37rem; padding-top: 1.35rem; border-top: 1px solid var(--gypsy-rule); }
+.expedition-reality__copy > p { margin: 0 0 1.25rem; font-size: clamp(1.04rem, 1.29vw, 1.19rem); line-height: 1.72; }
+.expedition-reality__invitation { margin-top: 3rem; }
+.expedition-reality__invitation p { margin: 0; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(2.1rem, 2.65vw, 2.75rem); font-style: italic; line-height: 1.2; }
+
+.expedition-close { padding: clamp(6.5rem, 10vw, 9rem) clamp(1.25rem, 5vw, 5rem); color: var(--gypsy-cream); background: var(--gypsy-ocean); }
+.expedition-close__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); }
+.expedition-close h2 { max-width: 11ch; font-size: clamp(4rem, 6vw, 6.5rem); }
+.expedition-close__action { max-width: 34rem; }
+.expedition-close__action p { margin: 0 0 2.5rem; color: rgba(245,240,231,.82); font-size: clamp(1.04rem, 1.3vw, 1.2rem); line-height: 1.72; }
+
+@media (max-width: 1100px) {
+  .expedition-page .gypsy-menu-button { display: block; }
+  .expedition-page .gypsy-nav { display: none; position: absolute; top: 100%; right: 1.25rem; left: 1.25rem; padding: 1.25rem; background: var(--gypsy-navy); flex-direction: column; align-items: stretch; gap: .4rem; }
+  .expedition-page .gypsy-nav.is-open { display: flex; }
+}
+@media (max-width: 900px) {
+  .expedition-route__grid, .expedition-map__intro, .expedition-west__intro, .expedition-east__intro, .expedition-komodo__grid, .expedition-life__grid, .expedition-reality__grid, .expedition-close__grid { grid-template-columns: 1fr; }
+  .expedition-route__copy, .expedition-life__copy, .expedition-map__copy, .expedition-west__copy, .expedition-east__copy, .expedition-close__action { max-width: 43rem; }
+  .expedition-route__photo, .expedition-life__photo { max-width: 49rem; }
+  .expedition-map__intro, .expedition-west__intro, .expedition-east__intro, .expedition-komodo__grid, .expedition-close__grid { gap: 3rem; }
+  .expedition-west__pair { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 3rem; }
+  .expedition-east__images { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 3rem; }
+  .expedition-reality__grid { gap: 3rem; }
+  .expedition-ledger__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 780px) {
+  .expedition-map__chart { max-width: 34rem; margin: 0 auto; }
+  .expedition-map__chart figcaption { margin-top: 1.5rem; }
+}
+@media (max-width: 640px) {
+  .expedition-section { padding: 6rem 1.25rem; }
+  .expedition-section h2, .expedition-komodo h2 { font-size: clamp(3.55rem, 11.5vw, 5.1rem); }
+  .expedition-hero { min-height: 100svh; }
+  .expedition-hero__image img { object-position: 60% center; }
+  .expedition-hero__veil { background: linear-gradient(0deg, rgba(3,20,34,.9) 0%, rgba(3,20,34,.61) 44%, rgba(3,20,34,.27) 100%); }
+  .expedition-hero__inner { padding: 11rem 1.25rem 3rem; }
+  .expedition-hero h1 { font-size: clamp(5rem, 16vw, 7.3rem); }
+  .expedition-hero__lead { font-size: clamp(1.8rem, 7vw, 2.45rem); }
+  .expedition-hero__location { align-self: flex-start; margin-top: 3rem; }
+  .expedition-route__grid { gap: 4rem; }
+  .expedition-route__photo .expedition-frame__image { aspect-ratio: 1.25; }
+  .expedition-map__intro, .expedition-west__intro, .expedition-east__intro { margin-bottom: 4rem; }
+  .expedition-west__panorama { aspect-ratio: 1.55; margin-bottom: 4rem; }
+  .expedition-west__pair, .expedition-east__images { grid-template-columns: 1fr; gap: 3.5rem; }
+  .expedition-west__quiet, .expedition-east__evening { width: 82%; margin: 0 0 0 auto; }
+  .expedition-west__quiet .expedition-frame__image { aspect-ratio: 1.15; }
+  .expedition-east__coast { aspect-ratio: 1.14; }
+  .expedition-east__evening .expedition-frame__image { aspect-ratio: 1.1; }
+  .expedition-komodo__intro { padding: 6rem 1.25rem 4rem; }
+  .expedition-komodo__landscape { aspect-ratio: 1.12; }
+  .expedition-life__grid { gap: 4rem; }
+  .expedition-life__photo .expedition-frame__image { aspect-ratio: 1.2; }
+  .expedition-ledger__list { gap: 2.5rem 1.25rem; margin-top: 5rem; }
+  .expedition-ledger__list .gypsy-boat__spec dd { font-size: clamp(1.55rem, 5.6vw, 2rem); }
+  .expedition-close { padding: 6rem 1.25rem; }
+  .expedition-close h2 { font-size: clamp(3.55rem, 11.5vw, 5.1rem); }
+}
+@media (max-width: 430px) {
+  .expedition-hero h1 { font-size: clamp(4.85rem, 16.2vw, 5.7rem); }
+  .expedition-ledger__list { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .expedition-skip { transition: none; }
+}

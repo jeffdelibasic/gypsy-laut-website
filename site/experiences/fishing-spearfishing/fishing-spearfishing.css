@@ -1,0 +1,148 @@
+/* M10E only. The approved homepage and M10A-D detail pages remain unchanged. */
+.fishing-skip { position: fixed; z-index: 100; top: .75rem; left: .75rem; padding: .7rem 1rem; transform: translateY(-150%); background: var(--gypsy-cream); color: var(--gypsy-ocean); font-size: .85rem; text-decoration: none; }
+.fishing-skip:focus { transform: translateY(0); outline: 2px solid var(--gypsy-aqua); outline-offset: 2px; }
+.fishing-inner { width: 100%; max-width: 1440px; margin: 0 auto; }
+.fishing-section { padding: clamp(7rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem); color: var(--gypsy-ink); background: var(--gypsy-cream); }
+.fishing-section--dark { color: var(--gypsy-cream); background: var(--gypsy-ocean); }
+.fishing-section h2, .fishing-close h2 { margin: 0; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(4rem, 6.5vw, 6.8rem); font-weight: 400; letter-spacing: -.04em; line-height: 1.04; text-wrap: balance; }
+.fishing-section--dark h2, .fishing-close h2 { color: var(--gypsy-cream); }
+.fishing-section p, .fishing-close p { overflow-wrap: break-word; }
+.fishing-eyebrow { display: flex; align-items: flex-start; gap: .9rem; margin: 0 0 clamp(1.9rem, 3vw, 2.8rem); color: var(--gypsy-ocean); font-size: .75rem; font-weight: 500; letter-spacing: .17em; line-height: 1.5; text-transform: uppercase; }
+.fishing-eyebrow::before { width: 2.75rem; height: 1px; flex: 0 0 auto; margin-top: .7em; background: currentColor; content: ""; }
+.fishing-eyebrow--light { color: rgba(245,240,231,.76); }
+.fishing-frame { --fishing-frame-gap: clamp(8px, .8vw, 12px); position: relative; width: 100%; margin: 0; align-self: start; outline: 1px solid rgba(12,48,70,.36); outline-offset: var(--fishing-frame-gap); }
+.fishing-frame--light { outline-color: rgba(245,240,231,.36); }
+.fishing-frame__image { position: relative; width: 100%; aspect-ratio: 1.4; overflow: hidden; background: var(--gypsy-ocean); }
+.fishing-frame__image img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.fishing-page .gypsy-button:focus-visible { outline: 2px solid var(--gypsy-sand); outline-offset: 4px; }
+
+.fishing-hero { position: relative; isolation: isolate; display: grid; grid-template-columns: 55% 45%; min-height: min(940px, 100svh); color: var(--gypsy-cream); background: var(--gypsy-ocean); }
+.fishing-hero__copy { position: relative; z-index: 2; display: flex; align-items: end; min-width: 0; padding: clamp(11rem, 15vw, 15rem) clamp(1.25rem, 5vw, 5rem) clamp(6rem, 9vw, 9rem); }
+.fishing-hero__copy-inner { width: 100%; max-width: 43rem; margin-left: auto; }
+.fishing-hero h1 { max-width: 11ch; margin: 0; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(5rem, 6.4vw, 7.2rem); font-weight: 400; letter-spacing: -.045em; line-height: .98; }
+.fishing-hero__display { max-width: 28rem; margin: 1.25rem 0 clamp(2.25rem, 4vw, 4rem); color: var(--gypsy-sand); font-family: var(--gypsy-display); font-size: clamp(2.4rem, 3.2vw, 3.5rem); font-style: italic; line-height: 1.08; }
+.fishing-hero__lead { max-width: 31rem; margin: 0 0 2.25rem; color: rgba(245,240,231,.86); font-size: clamp(1.03rem, 1.25vw, 1.17rem); line-height: 1.7; }
+.fishing-hero__media { position: relative; z-index: 1; min-width: 0; margin: 0; overflow: hidden; }
+.fishing-hero__media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 63%; }
+.fishing-hero__media::after { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(4,22,39,.45), rgba(4,22,39,.17) 17%, transparent 36%); content: ""; pointer-events: none; }
+.fishing-hero__location { position: absolute; z-index: 2; right: clamp(1.25rem, 5vw, 5rem); bottom: 1.5rem; margin: 0; color: rgba(245,240,231,.9); font-size: .68rem; letter-spacing: .17em; text-shadow: 0 1px 8px rgba(4,22,39,.55); text-transform: uppercase; }
+
+.fishing-base__grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); align-items: center; gap: clamp(4rem, 8vw, 9rem); }
+.fishing-base__copy { max-width: 37rem; }
+.fishing-base h2 { max-width: 11ch; margin-bottom: 2.2rem; }
+.fishing-base__copy p:not(.fishing-eyebrow) { margin: 0 0 1.3rem; font-size: clamp(1.04rem, 1.3vw, 1.19rem); line-height: 1.72; }
+.fishing-base__copy .fishing-base__closing { margin-top: 2.1rem; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.9rem, 2.5vw, 2.6rem); font-style: italic; line-height: 1.19; }
+.fishing-base__photo .fishing-frame__image { aspect-ratio: 1.2; }
+.fishing-base__photo img { object-position: 51% center; }
+
+.fishing-run { border-top: 1px solid var(--gypsy-rule); }
+.fishing-run__intro { display: grid; grid-template-columns: minmax(0, .91fr) minmax(0, 1.09fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); }
+.fishing-run h2 { max-width: 11ch; }
+.fishing-run__copy { max-width: 37rem; }
+.fishing-run__copy p { margin: 0 0 1.2rem; font-size: clamp(1.04rem, 1.28vw, 1.18rem); line-height: 1.72; }
+.fishing-run__copy p:last-child { margin-bottom: 0; }
+.fishing-run__images { display: grid; grid-template-columns: minmax(0, 1.46fr) minmax(0, .54fr); align-items: start; gap: clamp(2.5rem, 5vw, 5rem); margin-top: clamp(5rem, 8vw, 8rem); }
+.fishing-run__wide .fishing-frame__image { aspect-ratio: 1.58; }
+.fishing-run__wide img { object-position: 50% 65%; }
+.fishing-run__detail { margin-top: clamp(3rem, 6vw, 6rem); }
+.fishing-run__detail .fishing-frame__image { aspect-ratio: .9; }
+.fishing-run__detail img { object-position: 51% 54%; }
+
+.fishing-spear__grid { display: grid; grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr); align-items: center; gap: clamp(4rem, 9vw, 10rem); }
+.fishing-spear__copy { max-width: 38rem; }
+.fishing-spear h2 { max-width: 10ch; margin-bottom: 2.5rem; }
+.fishing-spear__copy p:not(.fishing-eyebrow) { margin: 0 0 1.35rem; color: rgba(245,240,231,.84); font-size: clamp(1.04rem, 1.3vw, 1.19rem); line-height: 1.7; }
+.fishing-spear__copy .fishing-spear__lead { color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(2rem, 2.65vw, 2.7rem); font-style: italic; line-height: 1.18; }
+.fishing-spear__photo { max-width: 40rem; justify-self: end; }
+.fishing-spear__photo .fishing-frame__image { aspect-ratio: .93; }
+.fishing-spear__photo img { object-position: 50% 60%; }
+
+.fishing-day__grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); align-items: center; gap: clamp(4rem, 9vw, 10rem); }
+.fishing-day__copy { max-width: 37rem; }
+.fishing-day h2 { max-width: 11ch; margin-bottom: 2.2rem; }
+.fishing-day__copy p:not(.fishing-eyebrow) { margin: 0 0 1.25rem; font-size: clamp(1.04rem, 1.27vw, 1.18rem); line-height: 1.72; }
+.fishing-day__copy .fishing-day__closing { color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.85rem, 2.4vw, 2.5rem); font-style: italic; line-height: 1.18; }
+.fishing-day__photo .fishing-frame__image { aspect-ratio: 1.29; }
+.fishing-day__photo img { object-position: center 55%; }
+
+.fishing-table { border-top: 1px solid var(--gypsy-rule); }
+.fishing-table__intro { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); margin-bottom: clamp(5rem, 8vw, 8rem); }
+.fishing-table h2 { max-width: 15ch; font-size: clamp(3.8rem, 6vw, 6.25rem); }
+.fishing-table__copy { max-width: 36rem; }
+.fishing-table__copy p { margin: 0 0 1.25rem; font-size: clamp(1.04rem, 1.26vw, 1.17rem); line-height: 1.72; }
+.fishing-table__copy p:first-child { color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.85rem, 2.45vw, 2.5rem); font-style: italic; line-height: 1.2; }
+.fishing-table__copy p:last-child { margin-bottom: 0; }
+.fishing-table__photo .fishing-frame__image { aspect-ratio: 1.9; }
+.fishing-table__photo img { object-position: center 53%; }
+
+.fishing-respect { border-top: 1px solid var(--gypsy-rule); }
+.fishing-respect__grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); align-items: end; gap: clamp(4rem, 9vw, 10rem); }
+.fishing-respect h2 { max-width: 12ch; }
+.fishing-respect__copy { max-width: 35rem; padding-top: 1.35rem; border-top: 1px solid var(--gypsy-rule); }
+.fishing-respect__copy p { margin: 0 0 1.25rem; font-size: clamp(1.06rem, 1.3vw, 1.2rem); line-height: 1.72; }
+.fishing-respect__copy p:last-child { margin-bottom: 0; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.85rem, 2.45vw, 2.5rem); font-style: italic; line-height: 1.2; }
+
+.fishing-ledger h2 { max-width: 13ch; }
+.fishing-ledger__list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(2.5rem, 5vw, 5rem); margin-top: clamp(5rem, 8vw, 8rem); }
+.fishing-ledger__list .gypsy-boat__spec { border-top-color: rgba(245,240,231,.27); }
+.fishing-ledger__list .gypsy-boat__spec dd { color: var(--gypsy-cream); font-size: clamp(1.65rem, 2.3vw, 2.45rem); white-space: normal; }
+.fishing-ledger__list .gypsy-boat__spec dt { color: rgba(245,240,231,.66); }
+
+.fishing-close { padding: clamp(6.5rem, 10vw, 9rem) clamp(1.25rem, 5vw, 5rem); color: var(--gypsy-cream); background: var(--gypsy-ocean); }
+.fishing-close__grid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); }
+.fishing-close h2 { max-width: 13ch; font-size: clamp(3.8rem, 5.7vw, 6.15rem); }
+.fishing-close__action { max-width: 33rem; }
+.fishing-close__action p { margin: 0 0 2.5rem; color: rgba(245,240,231,.82); font-size: clamp(1.04rem, 1.3vw, 1.2rem); line-height: 1.72; }
+
+@media (max-width: 1100px) {
+  .fishing-page .gypsy-menu-button { display: block; }
+  .fishing-page .gypsy-nav { display: none; position: absolute; top: 100%; right: 1.25rem; left: 1.25rem; padding: 1.25rem; background: var(--gypsy-navy); flex-direction: column; align-items: stretch; gap: .4rem; }
+  .fishing-page .gypsy-nav.is-open { display: flex; }
+  .fishing-base__grid, .fishing-spear__grid, .fishing-day__grid { gap: clamp(3rem, 6vw, 5rem); }
+}
+@media (max-width: 900px) {
+  .fishing-base__grid, .fishing-run__intro, .fishing-spear__grid, .fishing-day__grid, .fishing-table__intro, .fishing-respect__grid, .fishing-close__grid { grid-template-columns: 1fr; }
+  .fishing-base__copy, .fishing-spear__copy, .fishing-day__copy, .fishing-respect__copy, .fishing-close__action { max-width: 43rem; }
+  .fishing-base__photo, .fishing-day__photo { max-width: 46rem; }
+  .fishing-run__images { grid-template-columns: 1fr; }
+  .fishing-run__wide { max-width: 50rem; }
+  .fishing-run__detail { width: min(70%, 30rem); margin: 3.5rem 0 0 auto; }
+  .fishing-spear__photo { width: 100%; max-width: 44rem; justify-self: start; }
+  .fishing-spear__photo .fishing-frame__image { aspect-ratio: 1.05; }
+  .fishing-table__intro { gap: 2.5rem; }
+  .fishing-respect__grid, .fishing-close__grid { gap: 3rem; }
+  .fishing-ledger__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  .fishing-hero { display: flex; flex-direction: column; min-height: 0; }
+  .fishing-hero__copy { min-height: 0; padding: 10.5rem 1.25rem 4.5rem; }
+  .fishing-hero__copy-inner { max-width: 42rem; margin: 0 auto; }
+  .fishing-hero__media { width: 100%; aspect-ratio: 1.55; }
+  .fishing-hero__media img { object-position: 50% 59%; }
+  .fishing-hero__media::after { display: none; }
+  .fishing-hero__location { right: 1.25rem; bottom: 1rem; padding: .35rem .5rem; background: rgba(12,48,70,.72); font-size: .6rem; }
+}
+@media (max-width: 640px) {
+  .fishing-section { padding: 6rem 1.25rem; }
+  .fishing-section h2 { font-size: clamp(3.45rem, 11.2vw, 5rem); }
+  .fishing-hero h1 { font-size: clamp(4.1rem, 11.8vw, 5.75rem); }
+  .fishing-hero__display { font-size: clamp(2.15rem, 8vw, 3rem); }
+  .fishing-hero__media { aspect-ratio: 1.14; }
+  .fishing-run__images { margin-top: 4rem; }
+  .fishing-run__detail { width: 83%; margin-top: 3rem; }
+  .fishing-run__detail .fishing-frame__image { aspect-ratio: 1.06; }
+  .fishing-spear__photo .fishing-frame__image { aspect-ratio: .92; }
+  .fishing-day__photo .fishing-frame__image { aspect-ratio: 1.1; }
+  .fishing-table__intro { margin-bottom: 4rem; }
+  .fishing-table__photo .fishing-frame__image { aspect-ratio: 1.2; }
+  .fishing-ledger__list { gap: 2.5rem 1.25rem; margin-top: 5rem; }
+  .fishing-ledger__list .gypsy-boat__spec dd { font-size: clamp(1.55rem, 5.6vw, 2rem); }
+  .fishing-close { padding: 6rem 1.25rem; }
+  .fishing-close h2 { font-size: clamp(3.45rem, 11.2vw, 5rem); }
+}
+@media (max-width: 430px) {
+  .fishing-ledger__list { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fishing-skip { transition: none; }
+}

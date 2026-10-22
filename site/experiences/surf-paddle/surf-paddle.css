@@ -1,0 +1,152 @@
+/* M10D only. Shared styles and the approved pages remain unchanged. */
+.surf-skip { position: fixed; z-index: 100; top: .75rem; left: .75rem; padding: .7rem 1rem; transform: translateY(-150%); background: var(--gypsy-cream); color: var(--gypsy-ocean); font-size: .85rem; text-decoration: none; }
+.surf-skip:focus { transform: translateY(0); outline: 2px solid var(--gypsy-aqua); outline-offset: 2px; }
+.surf-inner { width: 100%; max-width: 1440px; margin: 0 auto; }
+.surf-section { padding: clamp(7rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem); background: var(--gypsy-cream); color: var(--gypsy-ink); }
+.surf-section--dark { background: var(--gypsy-ocean); color: var(--gypsy-cream); }
+.surf-section h2 { margin: 0; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(4.15rem, 6.8vw, 7rem); font-weight: 400; letter-spacing: -.04em; line-height: 1.04; text-wrap: balance; }
+.surf-section--dark h2 { color: var(--gypsy-cream); }
+.surf-section p { overflow-wrap: break-word; }
+.surf-eyebrow { display: flex; align-items: flex-start; gap: .9rem; margin: 0 0 clamp(1.9rem, 3vw, 2.8rem); color: var(--gypsy-ocean); font-size: .75rem; font-weight: 500; letter-spacing: .17em; line-height: 1.5; text-transform: uppercase; }
+.surf-eyebrow::before { width: 2.75rem; height: 1px; flex: 0 0 auto; margin-top: .7em; background: currentColor; content: ""; }
+.surf-eyebrow--light { color: rgba(245,240,231,.76); }
+.surf-frame { --surf-frame-gap: clamp(8px, .8vw, 12px); position: relative; width: 100%; margin: 0; align-self: start; outline: 1px solid rgba(12,48,70,.36); outline-offset: var(--surf-frame-gap); }
+.surf-frame--light { outline-color: rgba(245,240,231,.36); }
+.surf-frame__image { position: relative; width: 100%; aspect-ratio: 1.4; overflow: hidden; background: var(--gypsy-ocean); }
+.surf-frame__image img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.surf-page .gypsy-button:focus-visible { outline: 2px solid var(--gypsy-sand); outline-offset: 4px; }
+
+.surf-hero { position: relative; isolation: isolate; display: grid; grid-template-columns: 54% 46%; min-height: min(960px, 100svh); background: var(--gypsy-ocean); color: var(--gypsy-cream); }
+.surf-hero__copy { display: flex; align-items: end; min-width: 0; padding: clamp(11rem, 15vw, 15rem) clamp(1.25rem, 5vw, 5rem) clamp(6rem, 9vw, 9rem); }
+.surf-hero__copy-inner { width: 100%; max-width: 41rem; margin-left: auto; }
+.surf-hero h1 { margin: 0; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(4.8rem, 6.2vw, 7rem); font-weight: 400; letter-spacing: -.045em; line-height: .98; }
+.surf-hero__lead { max-width: 34rem; margin: clamp(2rem, 3.2vw, 3rem) 0 1rem; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(1.9rem, 2.6vw, 2.7rem); font-style: italic; line-height: 1.16; }
+.surf-hero__support { max-width: 30rem; margin: 0 0 2.25rem; color: rgba(245,240,231,.84); font-size: clamp(1rem, 1.25vw, 1.14rem); line-height: 1.7; }
+.surf-hero__media { position: relative; min-width: 0; margin: 0; overflow: hidden; }
+.surf-hero__media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 50%; }
+.surf-hero__media::after { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(4,22,39,.48) 0%, rgba(4,22,39,.2) 15%, transparent 35%); content: ""; pointer-events: none; }
+.surf-hero__location { position: absolute; z-index: 1; right: clamp(1.25rem, 5vw, 5rem); bottom: 1.5rem; margin: 0; color: rgba(245,240,231,.9); font-size: .68rem; letter-spacing: .17em; text-shadow: 0 1px 8px rgba(4,22,39,.65); text-transform: uppercase; }
+
+.surf-conditions__grid { display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr); align-items: center; gap: clamp(4rem, 8vw, 9rem); }
+.surf-conditions__photo .surf-frame__image { aspect-ratio: 1.42; }
+.surf-conditions__photo img { object-position: 50% center; }
+.surf-conditions__copy { max-width: 36rem; }
+.surf-conditions h2 { max-width: 11ch; margin-bottom: 2.25rem; }
+.surf-conditions__copy p:not(.surf-eyebrow) { margin: 0 0 1.3rem; font-size: clamp(1.04rem, 1.28vw, 1.18rem); line-height: 1.7; }
+
+.surf-wave__intro { display: grid; grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); }
+.surf-wave h2 { max-width: 10ch; }
+.surf-wave__copy { max-width: 36rem; }
+.surf-wave__copy p { margin: 0 0 1.25rem; color: rgba(245,240,231,.83); font-size: clamp(1.04rem, 1.28vw, 1.18rem); line-height: 1.7; }
+.surf-wave__copy p:last-child { margin-bottom: 0; }
+.surf-wave__images { display: grid; grid-template-columns: minmax(0, 1.48fr) minmax(0, .52fr); align-items: start; gap: clamp(2.5rem, 5vw, 5rem); margin-top: clamp(5rem, 8vw, 8rem); }
+.surf-wave__wide .surf-frame__image { aspect-ratio: 1.65; }
+.surf-wave__wide img { object-position: center 62%; }
+.surf-wave__detail { margin-top: clamp(3rem, 7vw, 7rem); }
+.surf-wave__detail .surf-frame__image { aspect-ratio: .84; }
+.surf-wave__detail img { object-position: 51% center; }
+
+.surf-paddle__grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); align-items: center; gap: clamp(4rem, 9vw, 10rem); }
+.surf-paddle__copy { max-width: 35rem; }
+.surf-paddle h2 { max-width: 11ch; margin-bottom: 2.5rem; }
+.surf-paddle__copy p:not(.surf-eyebrow) { margin: 0 0 1.3rem; font-size: clamp(1.04rem, 1.27vw, 1.18rem); line-height: 1.7; }
+.surf-paddle__copy p:last-child { color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.8rem, 2.3vw, 2.35rem); font-style: italic; line-height: 1.2; }
+.surf-paddle__photo { max-width: 41rem; justify-self: end; }
+.surf-paddle__photo .surf-frame__image { aspect-ratio: .91; }
+.surf-paddle__photo img { object-position: 52% 64%; }
+
+.surf-rhythm { padding-top: clamp(6.5rem, 10vw, 9rem); padding-bottom: clamp(6.5rem, 10vw, 9rem); }
+.surf-rhythm__title { max-width: 13ch; }
+.surf-rhythm__title em { color: var(--gypsy-sand); font-weight: 400; }
+.surf-rhythm__states { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(3rem, 8vw, 9rem); margin-top: clamp(4.5rem, 8vw, 7rem); }
+.surf-rhythm__states > div { padding-top: 1.25rem; border-top: 1px solid rgba(245,240,231,.28); }
+.surf-rhythm__states p { margin: 0 0 .5rem; color: rgba(245,240,231,.68); font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; }
+.surf-rhythm__states strong { color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(3.6rem, 6.2vw, 6.5rem); font-weight: 400; line-height: 1.05; }
+.surf-rhythm__closing { margin: clamp(4rem, 7vw, 6rem) 0 0; color: rgba(245,240,231,.84); font-family: var(--gypsy-display); font-size: clamp(1.8rem, 2.4vw, 2.5rem); font-style: italic; line-height: 1.25; }
+
+.surf-tender__grid { display: grid; grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr); align-items: center; gap: clamp(4rem, 8vw, 9rem); }
+.surf-tender__copy { max-width: 36rem; }
+.surf-tender h2 { max-width: 10ch; margin-bottom: 2.3rem; }
+.surf-tender__copy p:not(.surf-eyebrow) { margin: 0 0 1.3rem; font-size: clamp(1.03rem, 1.25vw, 1.16rem); line-height: 1.72; }
+.surf-tender__copy .surf-tender__line { color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.9rem, 2.5vw, 2.55rem); font-style: italic; line-height: 1.19; }
+.surf-tender__photo .surf-frame__image { aspect-ratio: 1.22; }
+.surf-tender__photo img { object-position: center center; }
+
+.surf-return { border-top: 1px solid var(--gypsy-rule); }
+.surf-return__intro { display: grid; grid-template-columns: minmax(0, 1.07fr) minmax(0, .93fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); margin-bottom: clamp(5rem, 8vw, 8rem); }
+.surf-return h2 { max-width: 14ch; }
+.surf-return__copy { max-width: 36rem; }
+.surf-return__copy p { margin: 0 0 1.25rem; font-size: clamp(1.05rem, 1.27vw, 1.18rem); line-height: 1.7; }
+.surf-return__copy p:last-child { margin-bottom: 0; color: var(--gypsy-ocean); font-family: var(--gypsy-display); font-size: clamp(1.8rem, 2.3vw, 2.4rem); font-style: italic; line-height: 1.2; }
+.surf-return__photo .surf-frame__image { aspect-ratio: 1.85; }
+.surf-return__photo img { object-position: center 52%; }
+
+.surf-ledger { border-top: 1px solid var(--gypsy-rule); }
+.surf-ledger h2 { max-width: 12ch; }
+.surf-ledger__list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(2.5rem, 5vw, 5rem); margin-top: clamp(5rem, 8vw, 8rem); }
+.surf-ledger__list .gypsy-boat__spec { border-top-color: rgba(245,240,231,.27); }
+.surf-ledger__list .gypsy-boat__spec dd { color: var(--gypsy-cream); font-size: clamp(1.65rem, 2.3vw, 2.45rem); white-space: normal; }
+.surf-ledger__list .gypsy-boat__spec dt { color: rgba(245,240,231,.66); }
+.surf-close { padding: clamp(6.5rem, 10vw, 9rem) clamp(1.25rem, 5vw, 5rem); color: var(--gypsy-cream); background: var(--gypsy-ocean); }
+.surf-close__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: end; gap: clamp(4rem, 8vw, 9rem); }
+.surf-close h2 { max-width: 15ch; margin: 0; color: var(--gypsy-cream); font-family: var(--gypsy-display); font-size: clamp(3.7rem, 5.3vw, 5.8rem); font-weight: 400; letter-spacing: -.04em; line-height: 1.04; text-wrap: balance; }
+.surf-close__action { max-width: 34rem; }
+.surf-close__action p { margin: 0 0 2.5rem; color: rgba(245,240,231,.82); font-size: clamp(1.04rem, 1.3vw, 1.2rem); line-height: 1.72; }
+.surf-close .gypsy-button { color: var(--gypsy-cream); }
+.surf-close .gypsy-button:hover, .surf-close .gypsy-button:focus-visible { color: var(--gypsy-ocean); background: var(--gypsy-cream); }
+
+@media (max-width: 1100px) {
+  .surf-page .gypsy-menu-button { display: block; }
+  .surf-page .gypsy-nav { display: none; position: absolute; top: 100%; right: 1.25rem; left: 1.25rem; padding: 1.25rem; background: var(--gypsy-navy); flex-direction: column; align-items: stretch; gap: .4rem; }
+  .surf-page .gypsy-nav.is-open { display: flex; }
+  .surf-conditions__grid, .surf-paddle__grid, .surf-tender__grid { gap: clamp(3rem, 6vw, 5rem); }
+  .surf-close__grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+@media (max-width: 900px) {
+  .surf-conditions__grid, .surf-wave__intro, .surf-paddle__grid, .surf-tender__grid, .surf-return__intro { grid-template-columns: 1fr; }
+  .surf-conditions__copy { grid-row: 1; max-width: 43rem; }
+  .surf-conditions__photo { max-width: 46rem; }
+  .surf-wave__images { grid-template-columns: 1fr; }
+  .surf-wave__wide { max-width: 48rem; }
+  .surf-wave__detail { width: min(70%, 28rem); margin: 3.5rem 0 0 auto; }
+  .surf-paddle__copy, .surf-tender__copy, .surf-return__copy { max-width: 43rem; }
+  .surf-paddle__photo { width: 100%; max-width: 44rem; justify-self: start; }
+  .surf-paddle__photo .surf-frame__image { aspect-ratio: 1.04; }
+  .surf-tender__photo { max-width: 46rem; }
+  .surf-return__intro { gap: 2.5rem; }
+  .surf-ledger__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  .surf-hero { display: flex; flex-direction: column; min-height: 0; }
+  .surf-hero__copy { min-height: 0; padding: 10.5rem 1.25rem 4.5rem; }
+  .surf-hero__copy-inner { max-width: 42rem; margin: 0 auto; }
+  .surf-hero__media { width: 100%; aspect-ratio: 1.6; }
+  .surf-hero__media img { object-position: center 51%; }
+  .surf-hero__media::after { display: none; }
+  .surf-hero__location { right: 1.25rem; bottom: 1rem; padding: .35rem .5rem; background: rgba(12,48,70,.72); font-size: .6rem; }
+}
+@media (max-width: 640px) {
+  .surf-section { padding: 6rem 1.25rem; }
+  .surf-section h2 { font-size: clamp(3.55rem, 11.5vw, 5.1rem); }
+  .surf-hero h1 { font-size: clamp(4.05rem, 11.9vw, 5.8rem); }
+  .surf-hero__media { aspect-ratio: 1.15; }
+  .surf-wave__images { margin-top: 4rem; }
+  .surf-wave__detail { width: 82%; margin-top: 3rem; }
+  .surf-wave__detail .surf-frame__image { aspect-ratio: 1.08; }
+  .surf-paddle__photo .surf-frame__image { aspect-ratio: .92; }
+  .surf-rhythm__states { grid-template-columns: 1fr; gap: 3rem; margin-top: 4rem; }
+  .surf-rhythm__closing { margin-top: 3.5rem; }
+  .surf-return__intro { margin-bottom: 4rem; }
+  .surf-return__photo .surf-frame__image { aspect-ratio: 1.25; }
+  .surf-ledger__list { gap: 2.5rem 1.25rem; margin-top: 5rem; }
+  .surf-ledger__list .gypsy-boat__spec dd { font-size: clamp(1.55rem, 5.6vw, 2rem); }
+  .surf-close { padding: 6rem 1.25rem; }
+  .surf-close h2 { font-size: clamp(3.1rem, 10vw, 4.7rem); }
+}
+@media (max-width: 430px) {
+  .surf-hero h1 { font-size: clamp(3.75rem, 12vw, 4.5rem); }
+  .surf-ledger__list { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .surf-skip { transition: none; }
+}

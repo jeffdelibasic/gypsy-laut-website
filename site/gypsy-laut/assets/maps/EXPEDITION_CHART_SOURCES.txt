@@ -1,0 +1,17 @@
+Gypsy Laut — Milestone 6 expedition-chart source notes
+
+Regional coastlines and island shapes were projected from Natural Earth's public-domain 1:10m land GeoJSON:
+https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_10m_land.geojson
+https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-land/
+https://www.naturalearthdata.com/about/terms-of-use/
+
+Broad relationships were checked against Indonesia Travel: Desert Point (Bangko-Bangko) on southwestern Lombok; the Northern Gilis off northwestern Lombok; Gili Gede among the southwestern Sekotong islands; Moyo north of Sumbawa.
+https://www.indonesia.travel/id/id/travel-ideas/heritage/pantai-lokasi-olahraga-ekstrem-di-lombok-barat
+https://www.indonesia.travel/id/id/travel-ideas/marine/follow-the-action-on-gili-trawangan
+https://www.indonesia.travel/id/id/travel-ideas/marine/gugusan-gili-cantik-desa-sekotong-barat-surga-keindahan-bahari-di-lombok-barat
+https://www.indonesia.travel/id/id/destination/bali-nusa-tenggara/west-nusa-tenggara
+
+Komodo's position between Sumbawa and Flores was checked against UNESCO:
+https://whc.unesco.org/en/list/609
+
+The Mushroom Bay marker and regional destination markers use the approximate geographic control points supplied in the Milestone 6 refinement brief. Desert Point and Gili Gede symbols are nudged slightly offshore to separate them visually from the generalized coastline. Natural Earth 1:10m land includes Nusa Penida but omits the smaller Nusa Lembongan and Nusa Ceningan, which are represented with separate simplified outlines from their approximate geographic positions. Both SVGs apply consistent longitude/latitude projections to Natural Earth coastlines and these control points. The SVGs embed the project's existing DM Sans font to make typography self-contained when loaded as external images. Destination labels are illustrative. Contour-style lines are decorative, not measured depths. Dashed lines suggest possible directions, not routes or access guarantees. Neither chart is for navigation or itinerary planning.

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">Bali, the Nusa islands, Lombok and the northern Gilis</title>
+  <desc id="desc">Illustrative regional nautical chart with Bali and Lombok as context and a magnified local detail for Nusa Lembongan, Nusa Ceningan and Nusa Penida. Place markers and lines are schematic, not for navigation.</desc>
+  <defs>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#8aaeb2" stroke-opacity=".12" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1400" height="780" fill="#0c3046"/>
+  <rect width="1400" height="780" fill="url(#grid)"/>
+
+  <!-- The upper field gives regional context without suggesting voyage routes. -->
+  <g fill="none" stroke="#8aaeb2" stroke-width="1" stroke-opacity=".23">
+    <path d="M340 8c82 37 127 97 109 167-11 43-41 72-48 120"/>
+    <path d="M390-22c117 48 177 136 146 227-10 29-14 58-1 91"/>
+    <path d="M573 146c91-76 256-93 369-44 65 28 99 68 119 120"/>
+    <path d="M566 115c109-96 288-113 429-60 78 29 124 79 150 144"/>
+    <path d="M1114 4c-54 56-67 130-47 207 8 31 5 61-11 89"/>
+  </g>
+  <g fill="#d6cebf" stroke="#d8c6a8" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M0 0h430l-12 25-25 17-7 30-27 17-8 32-26 19 3 29-29 20 2 26-26 18-8 30-29 20-21 37H0z"/>
+    <path d="M1233 0h167v299h-140l-22-24-10-37-24-27 9-33-18-32 11-33-17-30 23-27-8-23z"/>
+    <path d="M654 169l22-4 19 14 8 24-9 17 4 20-19 15-22-3-13-15-18 5-12-16 8-19-2-18 18-18z"/>
+    <path d="M717 235l18 5 9 16-7 17-19 3-14-13 3-17z"/>
+    <path d="M766 223l32-15 48 1 48-10 45 12 35 25-1 27-23 25-36 9-41-4-35 10-35-12-34-4-20-23 4-23z"/>
+    <path d="M1073 87c11-5 23 0 28 11l-4 16-15 6-13-10z"/>
+    <path d="M1120 93c9-3 17 3 20 11l-4 12-12 2-8-11z"/>
+    <path d="M1158 101c8-3 16 2 19 10l-4 12-12 4-8-9z"/>
+  </g>
+  <g fill="none" stroke="#d8c6a8" stroke-width="1" stroke-opacity=".58">
+    <path d="M352 92l47-6M300 185l43-4M264 257l46-5"/>
+    <path d="M1014 80l60 23M1045 145l78-40M1083 177l80-66"/>
+  </g>
+  <g font-family="DM Sans, Segoe UI, sans-serif">
+    <text x="104" y="100" fill="#26465a" font-size="28" letter-spacing="4">BALI</text>
+    <text x="1270" y="184" fill="#26465a" font-size="27" letter-spacing="4">LOMBOK</text>
+    <text x="402" y="95" fill="#e8dfcf" font-size="17">Padangbai</text>
+    <text x="351" y="185" fill="#e8dfcf" font-size="17">Sanur</text>
+    <text x="314" y="256" fill="#e8dfcf" font-size="17">Serangan Harbour</text>
+    <text x="990" y="72" fill="#e8dfcf" font-size="16">Gili Trawangan</text>
+    <text x="1014" y="139" fill="#e8dfcf" font-size="16">Gili Meno</text>
+    <text x="1074" y="175" fill="#e8dfcf" font-size="16">Gili Air</text>
+    <text x="611" y="132" fill="#e8dfcf" font-size="15" letter-spacing="2">NUSA ISLANDS</text>
+    <text x="795" y="258" fill="#26465a" font-size="15" letter-spacing="1.5">NUSA PENIDA</text>
+  </g>
+  <g fill="none" stroke="#e8dfcf" stroke-width="1.4"><circle cx="648" cy="231" r="7"/><circle cx="648" cy="231" r="2" fill="#e8dfcf" stroke="none"/></g>
+  <g transform="translate(534 67)" fill="none" stroke="#d8c6a8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle r="23" stroke-opacity=".6"/><path d="M0 12v-24m0 0-4 6m4-6 4 6"/><text x="0" y="-32" fill="#d8c6a8" stroke="none" text-anchor="middle" font-family="DM Sans, Segoe UI, sans-serif" font-size="13">N</text></g>
+
+  <!-- A lighter chart inset makes the local anchorage the focal point. -->
+  <rect x="34" y="324" width="1332" height="422" fill="#11364a" stroke="#d8c6a8" stroke-opacity=".55" stroke-width="1"/>
+  <path d="M700 294v30m-88-30v30" fill="none" stroke="#d8c6a8" stroke-width="1" stroke-opacity=".45"/>
+  <g fill="none" stroke="#8aaeb2" stroke-width="1" stroke-opacity=".24">
+    <path d="M355 380c77-45 195-42 279 8 42 26 59 61 66 101"/>
+    <path d="M326 371c102-69 239-62 338 1 49 31 78 76 81 132"/>
+    <path d="M734 446c130-71 384-75 544-15 37 14 71 33 98 61"/>
+    <path d="M719 430c146-93 408-97 586-33 29 10 54 23 76 39"/>
+    <path d="M749 705c172 59 400 47 537-7"/>
+  </g>
+  <g fill="none" stroke="#d8c6a8" stroke-width="1.1" stroke-opacity=".55" stroke-dasharray="3 8">
+    <path d="M455 575q95 52 174 38"/>
+    <path d="M455 575q174 68 326-40"/>
+    <path d="M455 575q202 95 329 2"/>
+  </g>
+  <g fill="#ece4d5" stroke="#d8c6a8" stroke-width="1.6" stroke-linejoin="round">
+    <path d="M503 397c28 0 58 13 74 37l7 24-11 18 5 25-13 20 3 25-25 25-26 4-16-13-29 5-19-16-18 5-12-19 7-18-10-19 9-24-6-19 17-26 21-8 12-18z"/>
+    <path d="M611 557l27 5 21 17 7 20-12 20-5 22-24 14-27-10-17-24-4-24z"/>
+    <path d="M807 478l36-18 61-8 62 5 53-12 60 10 56-7 56 14 53 24 31 30-3 41-24 34-33 16-31 31-60 14-62-3-47 17-54-10-37-18-52-1-38-22-35-10-16-27 4-25-12-21 9-27-13-17z"/>
+  </g>
+  <g font-family="DM Sans, Segoe UI, sans-serif" letter-spacing="1.6" fill="#173249">
+    <text x="481" y="499" font-size="17">NUSA</text>
+    <text x="469" y="522" font-size="17">LEMBONGAN</text>
+    <text x="956" y="562" font-size="21">NUSA PENIDA</text>
+  </g>
+  <g font-family="DM Sans, Segoe UI, sans-serif" fill="#e8dfcf">
+    <text x="69" y="360" font-size="15" letter-spacing="2">LOCAL DETAIL · MUSHROOM BAY / NUSA ISLANDS</text>
+    <text x="136" y="429" font-size="18">Shipwrecks</text>
+    <text x="136" y="475" font-size="18">Lacerations</text>
+    <text x="136" y="522" font-size="18">Playgrounds</text>
+    <text x="201" y="607" font-size="18">Mushroom Bay</text>
+    <text x="480" y="480" fill="#173249" font-size="16">Jungut Batu</text>
+    <text x="611" y="427" font-size="18">Mangroves</text>
+    <text x="566" y="687" font-size="17">Nusa Ceningan</text>
+    <text x="629" y="502" font-size="18">Crystal Bay</text>
+    <text x="684" y="579" font-size="18">Manta Bay</text>
+    <text x="697" y="664" font-size="18">Broken Beach</text>
+    <text x="833" y="710" font-size="18">Angel’s Billabong</text>
+    <text x="1022" y="699" font-size="18">Kelingking</text>
+    <text x="1192" y="708" font-size="18">Manta Point</text>
+  </g>
+  <g fill="none" stroke="#d8c6a8" stroke-width="1" stroke-opacity=".72">
+    <path d="M275 425h149M270 471h150M265 518h167M336 603l119-28"/>
+    <path d="M558 433l50-9M635 654l-11 21"/>
+    <path d="M778 528l-38-19M785 573l-5 0M838 622l-26 27M857 631l35 60M941 652l79 36M1023 662l134 37"/>
+  </g>
+  <g fill="#e8dfcf">
+    <circle cx="424" cy="425" r="2.7"/><circle cx="420" cy="471" r="2.7"/><circle cx="432" cy="518" r="2.7"/>
+    <circle cx="558" cy="433" r="2.7"/><circle cx="470" cy="471" r="2.7"/>
+    <circle cx="778" cy="528" r="2.7"/><circle cx="785" cy="573" r="2.7"/><circle cx="838" cy="622" r="2.7"/>
+    <circle cx="857" cy="631" r="2.7"/><circle cx="941" cy="652" r="2.7"/><circle cx="1023" cy="662" r="2.7"/>
+  </g>
+  <g fill="none" stroke="#e8dfcf" stroke-width="1.5"><circle cx="455" cy="575" r="8"/><circle cx="455" cy="575" r="2" fill="#e8dfcf" stroke="none"/></g>
+</svg>
